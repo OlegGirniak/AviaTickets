@@ -1,0 +1,2 @@
+F:\OOPProjects\AviaSales\AviaSales\x64\Debug\AviaSales.vcxproj.AssemblyReference.cache
+F:\OOPProjects\AviaSales\AviaSales\x64\Debug\AviaSales.vcxproj.SuggestedBindingRedirects.cache

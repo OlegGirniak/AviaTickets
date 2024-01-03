@@ -1,0 +1,6 @@
+F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.vcxproj.AssemblyReference.cache
+F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.vcxproj.SuggestedBindingRedirects.cache
+F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.SignInForm.resources
+F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.vcxproj.GenerateResource.cache
+F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.SignUpForm.resources
+F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.MainForm.resources

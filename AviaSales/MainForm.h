@@ -83,42 +83,70 @@ namespace AviaSales {
 	private: System::Windows::Forms::PictureBox^ AccountIcon;
 	private: System::Windows::Forms::Panel^ BuyTicketsPanel;
 	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ FromLabel;
+	private: System::Windows::Forms::Label^ ToLabel;
+
+
 	private: System::Windows::Forms::Panel^ panel5;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ FromTimeLabel;
+	private: System::Windows::Forms::Label^ ToTimaLabel;
+
+
+	private: System::Windows::Forms::Label^ TimeLabel;
+
+	private: System::Windows::Forms::Label^ PlaceLabel;
+
 
 	private: System::Windows::Forms::Panel^ panel6;
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::Button^ SignUpButton;
+	private: System::Windows::Forms::Label^ ClassLabel;
+	private: System::Windows::Forms::Button^ BuyTicketLabel;
+
+
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::ComboBox^ comboBox5;
 	private: System::Windows::Forms::ComboBox^ comboBox4;
 	private: System::Windows::Forms::ComboBox^ comboBox2;
 	private: System::Windows::Forms::ComboBox^ comboBox3;
-	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ ShowPriceLabel;
+
+	private: System::Windows::Forms::Label^ PriceLabel;
+	private: System::Windows::Forms::Label^ CountLabel;
+
+
+
+	private: System::Windows::Forms::ComboBox^ comboBox6;
+private: System::Windows::Forms::Panel^ MyTicketsPanel;
+private: System::Windows::Forms::Panel^ MainPanel;
+private: System::Windows::Forms::Label^ label5;
+private: System::Windows::Forms::Label^ MyTicketPanelTime;
+private: System::Windows::Forms::Label^ MyTicketPanelChooseTicket;
 
 
 
 
+private: System::Windows::Forms::Label^ label10;
+private: System::Windows::Forms::Label^ MyTicketPanelPrice;
 
 
+private: System::Windows::Forms::Label^ label8;
+private: System::Windows::Forms::Label^ MyTicketPanelCount;
 
 
+private: System::Windows::Forms::Label^ label6;
+private: System::Windows::Forms::Label^ MyTicketPanelPlace;
 
 
-
-
-
-
-
-
+private: System::Windows::Forms::Panel^ panel10;
+private: System::Windows::Forms::Panel^ panel9;
+private: System::Windows::Forms::Panel^ panel8;
+private: System::Windows::Forms::Panel^ panel7;
+private: System::Windows::Forms::ComboBox^ MyTicketPanelComboBox;
+private: System::Windows::Forms::Panel^ UserCashPanel;
+private: System::Windows::Forms::Button^ RefillButton;
+private: System::Windows::Forms::Label^ label4;
+private: System::Windows::Forms::Panel^ SettingsPanel;
+private: System::Windows::Forms::Button^ deleteAccountButton;
+private: System::Windows::Forms::Button^ LogOutButton;
 
 
 
@@ -170,26 +198,48 @@ namespace AviaSales {
 			this->UserPasswordLabel = (gcnew System::Windows::Forms::Label());
 			this->UserMailLabel = (gcnew System::Windows::Forms::Label());
 			this->BuyTicketsPanel = (gcnew System::Windows::Forms::Panel());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->BuyTicketLabel = (gcnew System::Windows::Forms::Button());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->SignUpButton = (gcnew System::Windows::Forms::Button());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox6 = (gcnew System::Windows::Forms::ComboBox());
+			this->CountLabel = (gcnew System::Windows::Forms::Label());
+			this->ShowPriceLabel = (gcnew System::Windows::Forms::Label());
+			this->PriceLabel = (gcnew System::Windows::Forms::Label());
 			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->ClassLabel = (gcnew System::Windows::Forms::Label());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->TimeLabel = (gcnew System::Windows::Forms::Label());
+			this->FromTimeLabel = (gcnew System::Windows::Forms::Label());
+			this->ToTimaLabel = (gcnew System::Windows::Forms::Label());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->FromLabel = (gcnew System::Windows::Forms::Label());
+			this->PlaceLabel = (gcnew System::Windows::Forms::Label());
+			this->ToLabel = (gcnew System::Windows::Forms::Label());
+			this->MyTicketsPanel = (gcnew System::Windows::Forms::Panel());
+			this->MyTicketPanelComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->panel10 = (gcnew System::Windows::Forms::Panel());
+			this->panel9 = (gcnew System::Windows::Forms::Panel());
+			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->panel7 = (gcnew System::Windows::Forms::Panel());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->MyTicketPanelPrice = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->MyTicketPanelCount = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->MyTicketPanelPlace = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->MyTicketPanelTime = (gcnew System::Windows::Forms::Label());
+			this->MyTicketPanelChooseTicket = (gcnew System::Windows::Forms::Label());
+			this->MainPanel = (gcnew System::Windows::Forms::Panel());
+			this->SettingsPanel = (gcnew System::Windows::Forms::Panel());
+			this->deleteAccountButton = (gcnew System::Windows::Forms::Button());
+			this->LogOutButton = (gcnew System::Windows::Forms::Button());
+			this->UserCashPanel = (gcnew System::Windows::Forms::Panel());
+			this->RefillButton = (gcnew System::Windows::Forms::Button());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->TopPanel->SuspendLayout();
 			this->SideMenuPanel->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -204,9 +254,13 @@ namespace AviaSales {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditPasswordPicture))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditEmailPicture))->BeginInit();
 			this->BuyTicketsPanel->SuspendLayout();
-			this->panel4->SuspendLayout();
-			this->panel5->SuspendLayout();
 			this->panel6->SuspendLayout();
+			this->panel5->SuspendLayout();
+			this->panel4->SuspendLayout();
+			this->MyTicketsPanel->SuspendLayout();
+			this->MainPanel->SuspendLayout();
+			this->SettingsPanel->SuspendLayout();
+			this->UserCashPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// TopPanel
@@ -295,6 +349,7 @@ namespace AviaSales {
 			this->SettingsLabel->Size = System::Drawing::Size(66, 19);
 			this->SettingsLabel->TabIndex = 13;
 			this->SettingsLabel->Text = L"Settings";
+			this->SettingsLabel->Click += gcnew System::EventHandler(this, &MainForm::SettingsLabel_Click);
 			// 
 			// pictureBox6
 			// 
@@ -319,6 +374,7 @@ namespace AviaSales {
 			this->CashLabel->Size = System::Drawing::Size(76, 19);
 			this->CashLabel->TabIndex = 11;
 			this->CashLabel->Text = L"User cash";
+			this->CashLabel->Click += gcnew System::EventHandler(this, &MainForm::CashLabel_Click);
 			// 
 			// pictureBox5
 			// 
@@ -372,9 +428,10 @@ namespace AviaSales {
 				static_cast<System::Byte>(0)));
 			this->MyTicketsLabel->Location = System::Drawing::Point(54, 193);
 			this->MyTicketsLabel->Name = L"MyTicketsLabel";
-			this->MyTicketsLabel->Size = System::Drawing::Size(81, 19);
+			this->MyTicketsLabel->Size = System::Drawing::Size(74, 19);
 			this->MyTicketsLabel->TabIndex = 6;
-			this->MyTicketsLabel->Text = L"My tickets";
+			this->MyTicketsLabel->Text = L"My ticket";
+			this->MyTicketsLabel->Click += gcnew System::EventHandler(this, &MainForm::MyTicketsLabel_Click);
 			// 
 			// BuyTicketsLabel
 			// 
@@ -449,10 +506,10 @@ namespace AviaSales {
 			this->AccountPanel->Controls->Add(this->EditEmailPicture);
 			this->AccountPanel->Controls->Add(this->UserPasswordLabel);
 			this->AccountPanel->Controls->Add(this->UserMailLabel);
-			this->AccountPanel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->AccountPanel->Location = System::Drawing::Point(208, 50);
+			this->AccountPanel->ForeColor = System::Drawing::Color::White;
+			this->AccountPanel->Location = System::Drawing::Point(518, 45);
 			this->AccountPanel->Name = L"AccountPanel";
-			this->AccountPanel->Size = System::Drawing::Size(736, 441);
+			this->AccountPanel->Size = System::Drawing::Size(183, 104);
 			this->AccountPanel->TabIndex = 2;
 			// 
 			// AccountIcon
@@ -531,194 +588,87 @@ namespace AviaSales {
 			// 
 			this->BuyTicketsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->BuyTicketsPanel->Controls->Add(this->SignUpButton);
+			this->BuyTicketsPanel->Controls->Add(this->BuyTicketLabel);
 			this->BuyTicketsPanel->Controls->Add(this->panel6);
 			this->BuyTicketsPanel->Controls->Add(this->panel5);
 			this->BuyTicketsPanel->Controls->Add(this->panel4);
-			this->BuyTicketsPanel->Location = System::Drawing::Point(208, 50);
+			this->BuyTicketsPanel->Location = System::Drawing::Point(91, 274);
 			this->BuyTicketsPanel->Name = L"BuyTicketsPanel";
 			this->BuyTicketsPanel->Size = System::Drawing::Size(736, 441);
 			this->BuyTicketsPanel->TabIndex = 18;
 			// 
-			// panel4
+			// BuyTicketLabel
 			// 
-			this->panel4->Controls->Add(this->comboBox3);
-			this->panel4->Controls->Add(this->comboBox1);
-			this->panel4->Controls->Add(this->label3);
-			this->panel4->Controls->Add(this->label7);
-			this->panel4->Controls->Add(this->label4);
-			this->panel4->Location = System::Drawing::Point(9, 18);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(715, 100);
-			this->panel4->TabIndex = 4;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->BuyTicketLabel->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->BuyTicketLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->BuyTicketLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI Symbol", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(3, 63);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(64, 23);
-			this->label3->TabIndex = 0;
-			this->label3->Text = L"FROM";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(312, 63);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(35, 23);
-			this->label4->TabIndex = 1;
-			this->label4->Text = L"TO";
-			// 
-			// panel5
-			// 
-			this->panel5->Controls->Add(this->comboBox4);
-			this->panel5->Controls->Add(this->comboBox2);
-			this->panel5->Controls->Add(this->label8);
-			this->panel5->Controls->Add(this->label5);
-			this->panel5->Controls->Add(this->label6);
-			this->panel5->Location = System::Drawing::Point(9, 124);
-			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(715, 100);
-			this->panel5->TabIndex = 5;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(4, 58);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(64, 23);
-			this->label5->TabIndex = 0;
-			this->label5->Text = L"FROM";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(312, 52);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(35, 23);
-			this->label6->TabIndex = 1;
-			this->label6->Text = L"TO";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(3, 5);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(86, 31);
-			this->label7->TabIndex = 6;
-			this->label7->Text = L"PLACE";
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(2, 5);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(72, 31);
-			this->label8->TabIndex = 7;
-			this->label8->Text = L"TIME";
+			this->BuyTicketLabel->ForeColor = System::Drawing::Color::White;
+			this->BuyTicketLabel->Location = System::Drawing::Point(285, 361);
+			this->BuyTicketLabel->Name = L"BuyTicketLabel";
+			this->BuyTicketLabel->Size = System::Drawing::Size(150, 46);
+			this->BuyTicketLabel->TabIndex = 16;
+			this->BuyTicketLabel->Text = L"BUY";
+			this->BuyTicketLabel->UseVisualStyleBackColor = true;
 			// 
 			// panel6
 			// 
-			this->panel6->Controls->Add(this->label12);
-			this->panel6->Controls->Add(this->label10);
-			this->panel6->Controls->Add(this->label11);
-			this->panel6->Controls->Add(this->textBox1);
+			this->panel6->Controls->Add(this->comboBox6);
+			this->panel6->Controls->Add(this->CountLabel);
+			this->panel6->Controls->Add(this->ShowPriceLabel);
+			this->panel6->Controls->Add(this->PriceLabel);
 			this->panel6->Controls->Add(this->comboBox5);
-			this->panel6->Controls->Add(this->label9);
+			this->panel6->Controls->Add(this->ClassLabel);
 			this->panel6->Location = System::Drawing::Point(9, 230);
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(715, 100);
 			this->panel6->TabIndex = 8;
 			// 
-			// label9
+			// comboBox6
 			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->comboBox6->BackColor = System::Drawing::Color::Plum;
+			this->comboBox6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->comboBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(2, 5);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(84, 31);
-			this->label9->TabIndex = 7;
-			this->label9->Text = L"CLASS";
+			this->comboBox6->ForeColor = System::Drawing::Color::White;
+			this->comboBox6->FormattingEnabled = true;
+			this->comboBox6->Location = System::Drawing::Point(269, 37);
+			this->comboBox6->Name = L"comboBox6";
+			this->comboBox6->Size = System::Drawing::Size(106, 24);
+			this->comboBox6->TabIndex = 17;
 			// 
-			// SignUpButton
+			// CountLabel
 			// 
-			this->SignUpButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->SignUpButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->SignUpButton->Font = (gcnew System::Drawing::Font(L"Segoe UI Symbol", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->SignUpButton->ForeColor = System::Drawing::Color::White;
-			this->SignUpButton->Location = System::Drawing::Point(285, 361);
-			this->SignUpButton->Name = L"SignUpButton";
-			this->SignUpButton->Size = System::Drawing::Size(150, 46);
-			this->SignUpButton->TabIndex = 16;
-			this->SignUpButton->Text = L"BUY";
-			this->SignUpButton->UseVisualStyleBackColor = true;
-			// 
-			// comboBox1
-			// 
-			this->comboBox1->BackColor = System::Drawing::Color::Plum;
-			this->comboBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->CountLabel->AutoSize = true;
+			this->CountLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->comboBox1->ForeColor = System::Drawing::Color::White;
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(73, 62);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(201, 24);
-			this->comboBox1->TabIndex = 7;
+			this->CountLabel->Location = System::Drawing::Point(269, 5);
+			this->CountLabel->Name = L"CountLabel";
+			this->CountLabel->Size = System::Drawing::Size(97, 31);
+			this->CountLabel->TabIndex = 16;
+			this->CountLabel->Text = L"COUNT";
 			// 
-			// comboBox2
+			// ShowPriceLabel
 			// 
-			this->comboBox2->BackColor = System::Drawing::Color::Plum;
-			this->comboBox2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->ShowPriceLabel->AutoSize = true;
+			this->ShowPriceLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->comboBox2->ForeColor = System::Drawing::Color::White;
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(73, 54);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(201, 24);
-			this->comboBox2->TabIndex = 8;
+			this->ShowPriceLabel->Location = System::Drawing::Point(556, 30);
+			this->ShowPriceLabel->Name = L"ShowPriceLabel";
+			this->ShowPriceLabel->Size = System::Drawing::Size(28, 31);
+			this->ShowPriceLabel->TabIndex = 15;
+			this->ShowPriceLabel->Text = L"0";
 			// 
-			// comboBox3
+			// PriceLabel
 			// 
-			this->comboBox3->BackColor = System::Drawing::Color::Plum;
-			this->comboBox3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->PriceLabel->AutoSize = true;
+			this->PriceLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->comboBox3->ForeColor = System::Drawing::Color::White;
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(362, 62);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(201, 24);
-			this->comboBox3->TabIndex = 8;
-			// 
-			// comboBox4
-			// 
-			this->comboBox4->BackColor = System::Drawing::Color::Plum;
-			this->comboBox4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->comboBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->comboBox4->ForeColor = System::Drawing::Color::White;
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(362, 54);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(201, 24);
-			this->comboBox4->TabIndex = 9;
+			this->PriceLabel->Location = System::Drawing::Point(461, 30);
+			this->PriceLabel->Name = L"PriceLabel";
+			this->PriceLabel->Size = System::Drawing::Size(102, 31);
+			this->PriceLabel->TabIndex = 14;
+			this->PriceLabel->Text = L"PRICE : ";
 			// 
 			// comboBox5
 			// 
@@ -733,52 +683,428 @@ namespace AviaSales {
 			this->comboBox5->Size = System::Drawing::Size(162, 24);
 			this->comboBox5->TabIndex = 10;
 			// 
-			// textBox1
+			// ClassLabel
 			// 
-			this->textBox1->BackColor = System::Drawing::Color::Plum;
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->ClassLabel->AutoSize = true;
+			this->ClassLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox1->ForeColor = System::Drawing::Color::White;
-			this->textBox1->Location = System::Drawing::Point(220, 35);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(91, 26);
-			this->textBox1->TabIndex = 12;
-			this->textBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->ClassLabel->Location = System::Drawing::Point(2, 5);
+			this->ClassLabel->Name = L"ClassLabel";
+			this->ClassLabel->Size = System::Drawing::Size(84, 31);
+			this->ClassLabel->TabIndex = 7;
+			this->ClassLabel->Text = L"CLASS";
 			// 
-			// label11
+			// panel5
 			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->panel5->Controls->Add(this->comboBox4);
+			this->panel5->Controls->Add(this->comboBox2);
+			this->panel5->Controls->Add(this->TimeLabel);
+			this->panel5->Controls->Add(this->FromTimeLabel);
+			this->panel5->Controls->Add(this->ToTimaLabel);
+			this->panel5->Location = System::Drawing::Point(9, 124);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(715, 100);
+			this->panel5->TabIndex = 5;
+			// 
+			// comboBox4
+			// 
+			this->comboBox4->BackColor = System::Drawing::Color::Plum;
+			this->comboBox4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->comboBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(214, 5);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(97, 31);
-			this->label11->TabIndex = 13;
-			this->label11->Text = L"COUNT";
+			this->comboBox4->ForeColor = System::Drawing::Color::White;
+			this->comboBox4->FormattingEnabled = true;
+			this->comboBox4->Location = System::Drawing::Point(362, 54);
+			this->comboBox4->Name = L"comboBox4";
+			this->comboBox4->Size = System::Drawing::Size(201, 24);
+			this->comboBox4->TabIndex = 9;
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->BackColor = System::Drawing::Color::Plum;
+			this->comboBox2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->comboBox2->ForeColor = System::Drawing::Color::White;
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(73, 54);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(201, 24);
+			this->comboBox2->TabIndex = 8;
+			// 
+			// TimeLabel
+			// 
+			this->TimeLabel->AutoSize = true;
+			this->TimeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->TimeLabel->Location = System::Drawing::Point(2, 5);
+			this->TimeLabel->Name = L"TimeLabel";
+			this->TimeLabel->Size = System::Drawing::Size(72, 31);
+			this->TimeLabel->TabIndex = 7;
+			this->TimeLabel->Text = L"TIME";
+			// 
+			// FromTimeLabel
+			// 
+			this->FromTimeLabel->AutoSize = true;
+			this->FromTimeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->FromTimeLabel->Location = System::Drawing::Point(4, 58);
+			this->FromTimeLabel->Name = L"FromTimeLabel";
+			this->FromTimeLabel->Size = System::Drawing::Size(64, 23);
+			this->FromTimeLabel->TabIndex = 0;
+			this->FromTimeLabel->Text = L"FROM";
+			// 
+			// ToTimaLabel
+			// 
+			this->ToTimaLabel->AutoSize = true;
+			this->ToTimaLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ToTimaLabel->Location = System::Drawing::Point(312, 52);
+			this->ToTimaLabel->Name = L"ToTimaLabel";
+			this->ToTimaLabel->Size = System::Drawing::Size(35, 23);
+			this->ToTimaLabel->TabIndex = 1;
+			this->ToTimaLabel->Text = L"TO";
+			// 
+			// panel4
+			// 
+			this->panel4->Controls->Add(this->comboBox3);
+			this->panel4->Controls->Add(this->comboBox1);
+			this->panel4->Controls->Add(this->FromLabel);
+			this->panel4->Controls->Add(this->PlaceLabel);
+			this->panel4->Controls->Add(this->ToLabel);
+			this->panel4->Location = System::Drawing::Point(9, 18);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(715, 100);
+			this->panel4->TabIndex = 4;
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->BackColor = System::Drawing::Color::Plum;
+			this->comboBox3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->comboBox3->ForeColor = System::Drawing::Color::White;
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Location = System::Drawing::Point(362, 62);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(201, 24);
+			this->comboBox3->TabIndex = 8;
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->BackColor = System::Drawing::Color::Plum;
+			this->comboBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->comboBox1->ForeColor = System::Drawing::Color::White;
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(73, 62);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(201, 24);
+			this->comboBox1->TabIndex = 7;
+			// 
+			// FromLabel
+			// 
+			this->FromLabel->AutoSize = true;
+			this->FromLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->FromLabel->Location = System::Drawing::Point(3, 63);
+			this->FromLabel->Name = L"FromLabel";
+			this->FromLabel->Size = System::Drawing::Size(64, 23);
+			this->FromLabel->TabIndex = 0;
+			this->FromLabel->Text = L"FROM";
+			// 
+			// PlaceLabel
+			// 
+			this->PlaceLabel->AutoSize = true;
+			this->PlaceLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->PlaceLabel->Location = System::Drawing::Point(3, 5);
+			this->PlaceLabel->Name = L"PlaceLabel";
+			this->PlaceLabel->Size = System::Drawing::Size(86, 31);
+			this->PlaceLabel->TabIndex = 6;
+			this->PlaceLabel->Text = L"PLACE";
+			// 
+			// ToLabel
+			// 
+			this->ToLabel->AutoSize = true;
+			this->ToLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ToLabel->Location = System::Drawing::Point(312, 63);
+			this->ToLabel->Name = L"ToLabel";
+			this->ToLabel->Size = System::Drawing::Size(35, 23);
+			this->ToLabel->TabIndex = 1;
+			this->ToLabel->Text = L"TO";
+			// 
+			// MyTicketsPanel
+			// 
+			this->MyTicketsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelComboBox);
+			this->MyTicketsPanel->Controls->Add(this->panel10);
+			this->MyTicketsPanel->Controls->Add(this->panel9);
+			this->MyTicketsPanel->Controls->Add(this->panel8);
+			this->MyTicketsPanel->Controls->Add(this->panel7);
+			this->MyTicketsPanel->Controls->Add(this->label10);
+			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelPrice);
+			this->MyTicketsPanel->Controls->Add(this->label8);
+			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelCount);
+			this->MyTicketsPanel->Controls->Add(this->label6);
+			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelPlace);
+			this->MyTicketsPanel->Controls->Add(this->label5);
+			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelTime);
+			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelChooseTicket);
+			this->MyTicketsPanel->ForeColor = System::Drawing::Color::White;
+			this->MyTicketsPanel->Location = System::Drawing::Point(301, 45);
+			this->MyTicketsPanel->Name = L"MyTicketsPanel";
+			this->MyTicketsPanel->Size = System::Drawing::Size(188, 104);
+			this->MyTicketsPanel->TabIndex = 17;
+			// 
+			// MyTicketPanelComboBox
+			// 
+			this->MyTicketPanelComboBox->BackColor = System::Drawing::Color::Plum;
+			this->MyTicketPanelComboBox->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->MyTicketPanelComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->MyTicketPanelComboBox->ForeColor = System::Drawing::Color::White;
+			this->MyTicketPanelComboBox->FormattingEnabled = true;
+			this->MyTicketPanelComboBox->Location = System::Drawing::Point(12, 51);
+			this->MyTicketPanelComboBox->Name = L"MyTicketPanelComboBox";
+			this->MyTicketPanelComboBox->Size = System::Drawing::Size(163, 24);
+			this->MyTicketPanelComboBox->TabIndex = 22;
+			// 
+			// panel10
+			// 
+			this->panel10->BackColor = System::Drawing::Color::White;
+			this->panel10->Location = System::Drawing::Point(268, 328);
+			this->panel10->Name = L"panel10";
+			this->panel10->Size = System::Drawing::Size(228, 2);
+			this->panel10->TabIndex = 21;
+			// 
+			// panel9
+			// 
+			this->panel9->BackColor = System::Drawing::Color::White;
+			this->panel9->Location = System::Drawing::Point(269, 233);
+			this->panel9->Name = L"panel9";
+			this->panel9->Size = System::Drawing::Size(228, 2);
+			this->panel9->TabIndex = 21;
+			// 
+			// panel8
+			// 
+			this->panel8->BackColor = System::Drawing::Color::White;
+			this->panel8->Location = System::Drawing::Point(268, 137);
+			this->panel8->Name = L"panel8";
+			this->panel8->Size = System::Drawing::Size(228, 2);
+			this->panel8->TabIndex = 21;
+			// 
+			// panel7
+			// 
+			this->panel7->BackColor = System::Drawing::Color::White;
+			this->panel7->Location = System::Drawing::Point(269, 39);
+			this->panel7->Name = L"panel7";
+			this->panel7->Size = System::Drawing::Size(228, 2);
+			this->panel7->TabIndex = 20;
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
+			this->label10->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(364, 30);
+			this->label10->Location = System::Drawing::Point(345, 299);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(102, 31);
-			this->label10->TabIndex = 14;
-			this->label10->Text = L"PRICE : ";
+			this->label10->Size = System::Drawing::Size(132, 31);
+			this->label10->TabIndex = 19;
+			this->label10->Text = L"PriceShow";
 			// 
-			// label12
+			// MyTicketPanelPrice
 			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->MyTicketPanelPrice->AutoSize = true;
+			this->MyTicketPanelPrice->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->MyTicketPanelPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(459, 30);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(28, 31);
-			this->label12->TabIndex = 15;
-			this->label12->Text = L"0";
+			this->MyTicketPanelPrice->Location = System::Drawing::Point(269, 299);
+			this->MyTicketPanelPrice->Name = L"MyTicketPanelPrice";
+			this->MyTicketPanelPrice->Size = System::Drawing::Size(71, 31);
+			this->MyTicketPanelPrice->TabIndex = 18;
+			this->MyTicketPanelPrice->Text = L"Price";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(365, 205);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(144, 31);
+			this->label8->TabIndex = 17;
+			this->label8->Text = L"CountShow";
+			// 
+			// MyTicketPanelCount
+			// 
+			this->MyTicketPanelCount->AutoSize = true;
+			this->MyTicketPanelCount->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->MyTicketPanelCount->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->MyTicketPanelCount->Location = System::Drawing::Point(263, 205);
+			this->MyTicketPanelCount->Name = L"MyTicketPanelCount";
+			this->MyTicketPanelCount->Size = System::Drawing::Size(83, 31);
+			this->MyTicketPanelCount->TabIndex = 16;
+			this->MyTicketPanelCount->Text = L"Count";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(365, 111);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(135, 31);
+			this->label6->TabIndex = 15;
+			this->label6->Text = L"PlaceShow";
+			// 
+			// MyTicketPanelPlace
+			// 
+			this->MyTicketPanelPlace->AutoSize = true;
+			this->MyTicketPanelPlace->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->MyTicketPanelPlace->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->MyTicketPanelPlace->Location = System::Drawing::Point(262, 112);
+			this->MyTicketPanelPlace->Name = L"MyTicketPanelPlace";
+			this->MyTicketPanelPlace->Size = System::Drawing::Size(74, 31);
+			this->MyTicketPanelPlace->TabIndex = 14;
+			this->MyTicketPanelPlace->Text = L"Place";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(365, 14);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(131, 31);
+			this->label5->TabIndex = 13;
+			this->label5->Text = L"TimeShow";
+			// 
+			// MyTicketPanelTime
+			// 
+			this->MyTicketPanelTime->AutoSize = true;
+			this->MyTicketPanelTime->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->MyTicketPanelTime->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->MyTicketPanelTime->Location = System::Drawing::Point(262, 14);
+			this->MyTicketPanelTime->Name = L"MyTicketPanelTime";
+			this->MyTicketPanelTime->Size = System::Drawing::Size(70, 31);
+			this->MyTicketPanelTime->TabIndex = 12;
+			this->MyTicketPanelTime->Text = L"Time";
+			// 
+			// MyTicketPanelChooseTicket
+			// 
+			this->MyTicketPanelChooseTicket->AutoSize = true;
+			this->MyTicketPanelChooseTicket->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->MyTicketPanelChooseTicket->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->MyTicketPanelChooseTicket->Location = System::Drawing::Point(3, 14);
+			this->MyTicketPanelChooseTicket->Name = L"MyTicketPanelChooseTicket";
+			this->MyTicketPanelChooseTicket->Size = System::Drawing::Size(172, 31);
+			this->MyTicketPanelChooseTicket->TabIndex = 11;
+			this->MyTicketPanelChooseTicket->Text = L"Choose Ticket";
+			// 
+			// MainPanel
+			// 
+			this->MainPanel->BackColor = System::Drawing::Color::Silver;
+			this->MainPanel->Controls->Add(this->SettingsPanel);
+			this->MainPanel->Controls->Add(this->UserCashPanel);
+			this->MainPanel->Controls->Add(this->MyTicketsPanel);
+			this->MainPanel->Controls->Add(this->AccountPanel);
+			this->MainPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->MainPanel->Location = System::Drawing::Point(208, 50);
+			this->MainPanel->Name = L"MainPanel";
+			this->MainPanel->Size = System::Drawing::Size(736, 441);
+			this->MainPanel->TabIndex = 19;
+			// 
+			// SettingsPanel
+			// 
+			this->SettingsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->SettingsPanel->Controls->Add(this->BuyTicketsPanel);
+			this->SettingsPanel->Controls->Add(this->deleteAccountButton);
+			this->SettingsPanel->Controls->Add(this->LogOutButton);
+			this->SettingsPanel->Location = System::Drawing::Point(68, 177);
+			this->SettingsPanel->Name = L"SettingsPanel";
+			this->SettingsPanel->Size = System::Drawing::Size(212, 94);
+			this->SettingsPanel->TabIndex = 14;
+			// 
+			// deleteAccountButton
+			// 
+			this->deleteAccountButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->deleteAccountButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->deleteAccountButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->deleteAccountButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->deleteAccountButton->Location = System::Drawing::Point(412, 169);
+			this->deleteAccountButton->Name = L"deleteAccountButton";
+			this->deleteAccountButton->Size = System::Drawing::Size(189, 79);
+			this->deleteAccountButton->TabIndex = 1;
+			this->deleteAccountButton->Text = L"Delete \r\nAcount";
+			this->deleteAccountButton->UseVisualStyleBackColor = false;
+			// 
+			// LogOutButton
+			// 
+			this->LogOutButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->LogOutButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->LogOutButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->LogOutButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->LogOutButton->Location = System::Drawing::Point(143, 169);
+			this->LogOutButton->Name = L"LogOutButton";
+			this->LogOutButton->Size = System::Drawing::Size(189, 79);
+			this->LogOutButton->TabIndex = 0;
+			this->LogOutButton->Text = L"Log Out";
+			this->LogOutButton->UseVisualStyleBackColor = false;
+			// 
+			// UserCashPanel
+			// 
+			this->UserCashPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->UserCashPanel->Controls->Add(this->RefillButton);
+			this->UserCashPanel->Controls->Add(this->label4);
+			this->UserCashPanel->Location = System::Drawing::Point(68, 45);
+			this->UserCashPanel->Name = L"UserCashPanel";
+			this->UserCashPanel->Size = System::Drawing::Size(212, 104);
+			this->UserCashPanel->TabIndex = 23;
+			// 
+			// RefillButton
+			// 
+			this->RefillButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->RefillButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->RefillButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->RefillButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->RefillButton->Location = System::Drawing::Point(260, 214);
+			this->RefillButton->Name = L"RefillButton";
+			this->RefillButton->Size = System::Drawing::Size(175, 54);
+			this->RefillButton->TabIndex = 13;
+			this->RefillButton->Text = L"REFILL";
+			this->RefillButton->UseVisualStyleBackColor = false;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 27.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(317, 128);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(72, 48);
+			this->label4->TabIndex = 12;
+			this->label4->Text = L"0 $";
 			// 
 			// MainForm
 			// 
@@ -786,8 +1112,7 @@ namespace AviaSales {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(944, 491);
-			this->Controls->Add(this->BuyTicketsPanel);
-			this->Controls->Add(this->AccountPanel);
+			this->Controls->Add(this->MainPanel);
 			this->Controls->Add(this->SideMenuPanel);
 			this->Controls->Add(this->TopPanel);
 			this->ForeColor = System::Drawing::Color::White;
@@ -814,20 +1139,28 @@ namespace AviaSales {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditPasswordPicture))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditEmailPicture))->EndInit();
 			this->BuyTicketsPanel->ResumeLayout(false);
-			this->panel4->ResumeLayout(false);
-			this->panel4->PerformLayout();
-			this->panel5->ResumeLayout(false);
-			this->panel5->PerformLayout();
 			this->panel6->ResumeLayout(false);
 			this->panel6->PerformLayout();
+			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
+			this->panel4->ResumeLayout(false);
+			this->panel4->PerformLayout();
+			this->MyTicketsPanel->ResumeLayout(false);
+			this->MyTicketsPanel->PerformLayout();
+			this->MainPanel->ResumeLayout(false);
+			this->SettingsPanel->ResumeLayout(false);
+			this->UserCashPanel->ResumeLayout(false);
+			this->UserCashPanel->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e)
+	{
+
 	}
 
-	private: System::Void MenuTimer_Tick(System::Object^ sender, System::EventArgs^ e) 
+private: System::Void MenuTimer_Tick(System::Object^ sender, System::EventArgs^ e) 
 {
 	if (SideMenuPanel->Width > 55)
 	{
@@ -839,7 +1172,7 @@ namespace AviaSales {
 	}
 }
 
-	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) 
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) 
 {
 	if (SideMenuPanel->Width > 55)
 	{
@@ -851,7 +1184,7 @@ namespace AviaSales {
 	}
 }
 
-	private: System::Void MenuTimerOpen_Tick(System::Object^ sender, System::EventArgs^ e) 
+private: System::Void MenuTimerOpen_Tick(System::Object^ sender, System::EventArgs^ e) 
 {
 	if (SideMenuPanel->Width < 190)
 	{
@@ -866,11 +1199,41 @@ private: System::Void AccountLabel_Click(System::Object^ sender, System::EventAr
 {
 	AccountPanel->Visible = true;
 	BuyTicketsPanel->Visible = false;
+	MyTicketsPanel->Visible = false;
+	UserCashPanel->Visible = false;
+	SettingsPanel->Visible = false;
 }
 private: System::Void BuyTicketsLabel_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	AccountPanel->Visible = false;
+	MyTicketsPanel->Visible = false;
 	BuyTicketsPanel->Visible = true;
+	UserCashPanel->Visible = false;
+	SettingsPanel->Visible = false;
+}
+private: System::Void MyTicketsLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	AccountPanel->Visible = false;
+	MyTicketsPanel->Visible = true;
+	BuyTicketsPanel->Visible = false;
+	UserCashPanel->Visible = false;
+	SettingsPanel->Visible = false;
+}
+private: System::Void CashLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	AccountPanel->Visible = false;
+	MyTicketsPanel->Visible = false;
+	BuyTicketsPanel->Visible = false;
+	UserCashPanel->Visible = true;
+	SettingsPanel->Visible = false;
+}
+private: System::Void SettingsLabel_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	AccountPanel->Visible = false;
+	MyTicketsPanel->Visible = false;
+	BuyTicketsPanel->Visible = false;
+	UserCashPanel->Visible = false;
+	SettingsPanel->Visible = true;
 }
 };
 }

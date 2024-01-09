@@ -4,3 +4,4 @@ F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.SignInForm.resources
 F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.vcxproj.GenerateResource.cache
 F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.SignUpForm.resources
 F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.MainForm.resources
+F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.AdminForm.resources

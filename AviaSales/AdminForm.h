@@ -73,7 +73,8 @@ namespace AviaSales {
 	private: System::Windows::Forms::Label^ AdminPasswordLabel;
 
 	private: System::Windows::Forms::Label^ AdminMailLabel;
-	private: System::Windows::Forms::Panel^ AdminCustomersPanel;
+	private: System::Windows::Forms::Panel^ CustomersPanel;
+
 	private: System::Windows::Forms::Label^ CoutnCustomerTicketsLabel;
 	private: System::Windows::Forms::ComboBox^ CustomerTicketsComboBox;
 
@@ -85,7 +86,8 @@ namespace AviaSales {
 	private: System::Windows::Forms::Label^ CustomersPanelChooseCustomerLabel;
 	private: System::Windows::Forms::Button^ DeleteTicketButton;
 	private: System::Windows::Forms::Panel^ PlanesPanel;
-	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::Panel^ TicketsPanel;
+
 	private: System::Windows::Forms::Button^ EditTciketsButton;
 	private: System::Windows::Forms::Button^ AddTicketsButton;
 	private: System::Windows::Forms::Label^ label3;
@@ -143,7 +145,7 @@ namespace AviaSales {
 			this->MenuPicture = (gcnew System::Windows::Forms::PictureBox());
 			this->MenuLabel = (gcnew System::Windows::Forms::Label());
 			this->AdminMainPanel = (gcnew System::Windows::Forms::Panel());
-			this->AdminCustomersPanel = (gcnew System::Windows::Forms::Panel());
+			this->CustomersPanel = (gcnew System::Windows::Forms::Panel());
 			this->DeleteTicketButton = (gcnew System::Windows::Forms::Button());
 			this->CoutnCustomerTicketsLabel = (gcnew System::Windows::Forms::Label());
 			this->CustomerTicketsComboBox = (gcnew System::Windows::Forms::ComboBox());
@@ -153,7 +155,7 @@ namespace AviaSales {
 			this->SettingsPanel = (gcnew System::Windows::Forms::Panel());
 			this->deleteAccountButton = (gcnew System::Windows::Forms::Button());
 			this->LogOutButton = (gcnew System::Windows::Forms::Button());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->TicketsPanel = (gcnew System::Windows::Forms::Panel());
 			this->EditTciketsButton = (gcnew System::Windows::Forms::Button());
 			this->AddTicketsButton = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -183,9 +185,9 @@ namespace AviaSales {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AccountPicture))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MenuPicture))->BeginInit();
 			this->AdminMainPanel->SuspendLayout();
-			this->AdminCustomersPanel->SuspendLayout();
+			this->CustomersPanel->SuspendLayout();
 			this->SettingsPanel->SuspendLayout();
-			this->panel4->SuspendLayout();
+			this->TicketsPanel->SuspendLayout();
 			this->PlanesPanel->SuspendLayout();
 			this->AdminAccountPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AdminAccountIcon))->BeginInit();
@@ -277,6 +279,7 @@ namespace AviaSales {
 			this->AccountLabel->Size = System::Drawing::Size(67, 19);
 			this->AccountLabel->TabIndex = 14;
 			this->AccountLabel->Text = L"Account";
+			this->AccountLabel->Click += gcnew System::EventHandler(this, &AdminForm::AccountLabel_Click);
 			// 
 			// PlanesLabel
 			// 
@@ -290,6 +293,7 @@ namespace AviaSales {
 			this->PlanesLabel->Size = System::Drawing::Size(54, 19);
 			this->PlanesLabel->TabIndex = 13;
 			this->PlanesLabel->Text = L"Planes";
+			this->PlanesLabel->Click += gcnew System::EventHandler(this, &AdminForm::PlanesLabel_Click);
 			// 
 			// pictureBox1
 			// 
@@ -314,6 +318,7 @@ namespace AviaSales {
 			this->CustomersLabel->Size = System::Drawing::Size(84, 19);
 			this->CustomersLabel->TabIndex = 11;
 			this->CustomersLabel->Text = L"Customers";
+			this->CustomersLabel->Click += gcnew System::EventHandler(this, &AdminForm::CustomersLabel_Click);
 			// 
 			// panel1
 			// 
@@ -339,6 +344,7 @@ namespace AviaSales {
 			this->SettingsLabel->Size = System::Drawing::Size(66, 19);
 			this->SettingsLabel->TabIndex = 13;
 			this->SettingsLabel->Text = L"Settings";
+			this->SettingsLabel->Click += gcnew System::EventHandler(this, &AdminForm::SettingsLabel_Click);
 			// 
 			// pictureBox6
 			// 
@@ -385,6 +391,7 @@ namespace AviaSales {
 			this->BuyTicketsLabel->Size = System::Drawing::Size(58, 19);
 			this->BuyTicketsLabel->TabIndex = 5;
 			this->BuyTicketsLabel->Text = L"Tickets";
+			this->BuyTicketsLabel->Click += gcnew System::EventHandler(this, &AdminForm::BuyTicketsLabel_Click);
 			// 
 			// MenuPicture
 			// 
@@ -414,9 +421,9 @@ namespace AviaSales {
 			// AdminMainPanel
 			// 
 			this->AdminMainPanel->BackColor = System::Drawing::SystemColors::ButtonShadow;
-			this->AdminMainPanel->Controls->Add(this->AdminCustomersPanel);
+			this->AdminMainPanel->Controls->Add(this->CustomersPanel);
 			this->AdminMainPanel->Controls->Add(this->SettingsPanel);
-			this->AdminMainPanel->Controls->Add(this->panel4);
+			this->AdminMainPanel->Controls->Add(this->TicketsPanel);
 			this->AdminMainPanel->Controls->Add(this->PlanesPanel);
 			this->AdminMainPanel->Controls->Add(this->AdminAccountPanel);
 			this->AdminMainPanel->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -425,21 +432,22 @@ namespace AviaSales {
 			this->AdminMainPanel->Size = System::Drawing::Size(736, 441);
 			this->AdminMainPanel->TabIndex = 3;
 			// 
-			// AdminCustomersPanel
+			// CustomersPanel
 			// 
-			this->AdminCustomersPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->AdminCustomersPanel->Controls->Add(this->DeleteTicketButton);
-			this->AdminCustomersPanel->Controls->Add(this->CoutnCustomerTicketsLabel);
-			this->AdminCustomersPanel->Controls->Add(this->CustomerTicketsComboBox);
-			this->AdminCustomersPanel->Controls->Add(this->ChooseTicketLabel);
-			this->AdminCustomersPanel->Controls->Add(this->CustomersComboBox);
-			this->AdminCustomersPanel->Controls->Add(this->CustomersPanelChooseCustomerLabel);
-			this->AdminCustomersPanel->ForeColor = System::Drawing::Color::White;
-			this->AdminCustomersPanel->Location = System::Drawing::Point(334, 178);
-			this->AdminCustomersPanel->Name = L"AdminCustomersPanel";
-			this->AdminCustomersPanel->Size = System::Drawing::Size(208, 100);
-			this->AdminCustomersPanel->TabIndex = 25;
+			this->CustomersPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->CustomersPanel->Controls->Add(this->DeleteTicketButton);
+			this->CustomersPanel->Controls->Add(this->CoutnCustomerTicketsLabel);
+			this->CustomersPanel->Controls->Add(this->CustomerTicketsComboBox);
+			this->CustomersPanel->Controls->Add(this->ChooseTicketLabel);
+			this->CustomersPanel->Controls->Add(this->CustomersComboBox);
+			this->CustomersPanel->Controls->Add(this->CustomersPanelChooseCustomerLabel);
+			this->CustomersPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->CustomersPanel->ForeColor = System::Drawing::Color::White;
+			this->CustomersPanel->Location = System::Drawing::Point(0, 0);
+			this->CustomersPanel->Name = L"CustomersPanel";
+			this->CustomersPanel->Size = System::Drawing::Size(736, 441);
+			this->CustomersPanel->TabIndex = 25;
 			// 
 			// DeleteTicketButton
 			// 
@@ -524,10 +532,11 @@ namespace AviaSales {
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->SettingsPanel->Controls->Add(this->deleteAccountButton);
 			this->SettingsPanel->Controls->Add(this->LogOutButton);
+			this->SettingsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->SettingsPanel->ForeColor = System::Drawing::Color::White;
-			this->SettingsPanel->Location = System::Drawing::Point(73, 178);
+			this->SettingsPanel->Location = System::Drawing::Point(0, 0);
 			this->SettingsPanel->Name = L"SettingsPanel";
-			this->SettingsPanel->Size = System::Drawing::Size(221, 100);
+			this->SettingsPanel->Size = System::Drawing::Size(736, 441);
 			this->SettingsPanel->TabIndex = 49;
 			// 
 			// deleteAccountButton
@@ -560,19 +569,20 @@ namespace AviaSales {
 			this->LogOutButton->Text = L"Log Out";
 			this->LogOutButton->UseVisualStyleBackColor = false;
 			// 
-			// panel4
+			// TicketsPanel
 			// 
-			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->TicketsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->panel4->Controls->Add(this->EditTciketsButton);
-			this->panel4->Controls->Add(this->AddTicketsButton);
-			this->panel4->Controls->Add(this->label3);
-			this->panel4->Controls->Add(this->DeleteTicketsButton);
-			this->panel4->ForeColor = System::Drawing::Color::White;
-			this->panel4->Location = System::Drawing::Point(73, 33);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(200, 100);
-			this->panel4->TabIndex = 45;
+			this->TicketsPanel->Controls->Add(this->EditTciketsButton);
+			this->TicketsPanel->Controls->Add(this->AddTicketsButton);
+			this->TicketsPanel->Controls->Add(this->label3);
+			this->TicketsPanel->Controls->Add(this->DeleteTicketsButton);
+			this->TicketsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->TicketsPanel->ForeColor = System::Drawing::Color::White;
+			this->TicketsPanel->Location = System::Drawing::Point(0, 0);
+			this->TicketsPanel->Name = L"TicketsPanel";
+			this->TicketsPanel->Size = System::Drawing::Size(736, 441);
+			this->TicketsPanel->TabIndex = 45;
 			// 
 			// EditTciketsButton
 			// 
@@ -639,10 +649,11 @@ namespace AviaSales {
 			this->PlanesPanel->Controls->Add(this->AddPlaneButton);
 			this->PlanesPanel->Controls->Add(this->LabelPlane);
 			this->PlanesPanel->Controls->Add(this->DeletePlaneButton);
+			this->PlanesPanel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->PlanesPanel->ForeColor = System::Drawing::Color::White;
-			this->PlanesPanel->Location = System::Drawing::Point(294, 33);
+			this->PlanesPanel->Location = System::Drawing::Point(0, 0);
 			this->PlanesPanel->Name = L"PlanesPanel";
-			this->PlanesPanel->Size = System::Drawing::Size(200, 100);
+			this->PlanesPanel->Size = System::Drawing::Size(736, 441);
 			this->PlanesPanel->TabIndex = 41;
 			// 
 			// EditPlaneButton
@@ -713,10 +724,11 @@ namespace AviaSales {
 			this->AdminAccountPanel->Controls->Add(this->EditEmailPicture);
 			this->AdminAccountPanel->Controls->Add(this->AdminPasswordLabel);
 			this->AdminAccountPanel->Controls->Add(this->AdminMailLabel);
+			this->AdminAccountPanel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->AdminAccountPanel->ForeColor = System::Drawing::Color::White;
-			this->AdminAccountPanel->Location = System::Drawing::Point(504, 33);
+			this->AdminAccountPanel->Location = System::Drawing::Point(0, 0);
 			this->AdminAccountPanel->Name = L"AdminAccountPanel";
-			this->AdminAccountPanel->Size = System::Drawing::Size(200, 100);
+			this->AdminAccountPanel->Size = System::Drawing::Size(736, 441);
 			this->AdminAccountPanel->TabIndex = 0;
 			// 
 			// AdminAccountIcon
@@ -825,11 +837,11 @@ namespace AviaSales {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AccountPicture))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MenuPicture))->EndInit();
 			this->AdminMainPanel->ResumeLayout(false);
-			this->AdminCustomersPanel->ResumeLayout(false);
-			this->AdminCustomersPanel->PerformLayout();
+			this->CustomersPanel->ResumeLayout(false);
+			this->CustomersPanel->PerformLayout();
 			this->SettingsPanel->ResumeLayout(false);
-			this->panel4->ResumeLayout(false);
-			this->panel4->PerformLayout();
+			this->TicketsPanel->ResumeLayout(false);
+			this->TicketsPanel->PerformLayout();
 			this->PlanesPanel->ResumeLayout(false);
 			this->PlanesPanel->PerformLayout();
 			this->AdminAccountPanel->ResumeLayout(false);
@@ -873,6 +885,47 @@ private: System::Void MenuPicture_Click(System::Object^ sender, System::EventArg
 	{
 		MenuOpenTimer->Start();
 	}
+}
+private: System::Void AccountLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	AdminAccountPanel->Visible = true;
+	PlanesPanel->Visible = false;
+	SettingsPanel->Visible = false;
+	TicketsPanel->Visible = false;
+	CustomersPanel->Visible = false;
+}
+
+private: System::Void CustomersLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	AdminAccountPanel->Visible = false;
+	PlanesPanel->Visible = false;
+	SettingsPanel->Visible = false;
+	TicketsPanel->Visible = false;
+	CustomersPanel->Visible = true;
+}
+private: System::Void PlanesLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	AdminAccountPanel->Visible = false;
+	PlanesPanel->Visible = true;
+	SettingsPanel->Visible = false;
+	TicketsPanel->Visible = false;
+	CustomersPanel->Visible = false;
+}
+private: System::Void BuyTicketsLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	AdminAccountPanel->Visible = false;
+	PlanesPanel->Visible = false;
+	SettingsPanel->Visible = false;
+	TicketsPanel->Visible = true;
+	CustomersPanel->Visible = false;
+}
+private: System::Void SettingsLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	AdminAccountPanel->Visible = false;
+	PlanesPanel->Visible = false;
+	SettingsPanel->Visible = true;
+	TicketsPanel->Visible = false;
+	CustomersPanel->Visible = false;
 }
 };
 }

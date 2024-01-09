@@ -4,22 +4,22 @@ using namespace System;
 public ref class User 
 {
 
-    String^ name;
+    String^ email;
     String^ password;
 
 public:
 
     User() {}
 
-    User(String^ name, String^ password)
-        : name(name), password(password)
+    User(String^ email, String^ password)
+        : email(email), password(password)
     { }
 
-    property String^ Name 
+    property String^ Email
     {
         String^ get()
         {
-            return name;
+            return email;
         }
     }
 

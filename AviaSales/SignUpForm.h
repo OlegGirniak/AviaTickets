@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Customer.h"
+#include "SqlService.h"
+
 namespace AviaSales {
 
 	using namespace System;
@@ -49,27 +52,7 @@ namespace AviaSales {
 
 	protected:
 
-
-
-
-
-
-
-
-
-
-
 	protected:
-
-
-
-
-
-
-
-
-
-
 
 	private:
 		/// <summary>
@@ -112,6 +95,7 @@ namespace AviaSales {
 			this->SignUpButton->TabIndex = 15;
 			this->SignUpButton->Text = L"SIGN UP";
 			this->SignUpButton->UseVisualStyleBackColor = true;
+			this->SignUpButton->Click += gcnew System::EventHandler(this, &SignUpForm::SignUpButton_Click);
 			// 
 			// panel3
 			// 
@@ -266,6 +250,7 @@ namespace AviaSales {
 
 		}
 #pragma endregion
+
 	private: System::Void PasswordTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e)
 	{
 		if (PasswordTextBox->Text != "password")
@@ -299,6 +284,23 @@ private: System::Void PasswordAgainTextBox_Click(System::Object^ sender, System:
 	{
 		PasswordAgainTextBox->Text = "";
 		PasswordAgainTextBox->ForeColor = Color::White;
+	}
+}
+
+private: System::Void SignUpButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	//create new customer
+
+	if (EmailTextBox->Text != "email" && PasswordTextBox->Text != "password" 
+		&& PasswordTextBox->Text == PasswordAgainTextBox->Text)
+	{
+		//create new customer
+		Customer newCustomer(EmailTextBox->Text, PasswordTextBox->Text);
+
+		//create sql service
+		SqlService sqlService;
+
+		sqlService.AddCustomer(% newCustomer);
 	}
 }
 };

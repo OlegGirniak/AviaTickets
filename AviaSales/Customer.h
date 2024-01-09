@@ -21,6 +21,4 @@ public:
     {
         tickets = customerTickets;
     }
-
-
 };

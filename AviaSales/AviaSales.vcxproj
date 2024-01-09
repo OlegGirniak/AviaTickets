@@ -115,6 +115,7 @@
       <AdditionalLibraryDirectories>E:\C++Packages\mysql-connector-c++-8.2.0-winx64\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EntryPointSymbol>main</EntryPointSymbol>
       <SubSystem>Windows</SubSystem>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -134,6 +135,7 @@
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="SignInForm.cpp" />
     <ClCompile Include="SignUpForm.cpp" />
+    <ClCompile Include="SqlService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdminForm.h">
@@ -154,6 +156,7 @@
     <ClInclude Include="SignUpForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SqlService.h" />
     <ClInclude Include="Ticket.h" />
     <ClInclude Include="TypeOfTicket.h" />
     <ClInclude Include="User.h" />

@@ -25,9 +25,9 @@ Class User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
     System.String Password 'get set' : 
-    System.String Name 'get ' : 
+    System.String Email 'get ' : 
   Methods:
-    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    get_Email(): PrivateScope, Public, HideBySig, SpecialName
     get_Password(): PrivateScope, Public, HideBySig, SpecialName
     set_Password(String): PrivateScope, Public, HideBySig, SpecialName
 Class AviaSales.SignInForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

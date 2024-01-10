@@ -1,6 +1,65 @@
 ﻿  Main.cpp
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,29): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,28): warning C4244: 'argument': conversion from 'wchar_t' to '_Elem', possible loss of data
+          with
+          [
+              _Elem=char
+          ]
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(18,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(29,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\AdminForm.h(27,12): warning C4677: 'AdminForm': signature of non-private member contains assembly private type 'Administrator'
+F:\OOPProjects\AviaSales\AviaSales\Administrator.h(9,11): message : see declaration of 'Administrator'
+F:\OOPProjects\AviaSales\AviaSales\AdminForm.h(868,30): warning C4677: 'admin': signature of non-private member contains assembly private type 'Administrator'
+F:\OOPProjects\AviaSales\AviaSales\Administrator.h(9,11): message : see declaration of 'Administrator'
+  SignInForm.cpp
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,29): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,28): warning C4244: 'argument': conversion from 'wchar_t' to '_Elem', possible loss of data
+          with
+          [
+              _Elem=char
+          ]
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(18,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(29,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\AdminForm.h(27,12): warning C4677: 'AdminForm': signature of non-private member contains assembly private type 'Administrator'
+F:\OOPProjects\AviaSales\AviaSales\Administrator.h(9,11): message : see declaration of 'Administrator'
+F:\OOPProjects\AviaSales\AviaSales\AdminForm.h(868,30): warning C4677: 'admin': signature of non-private member contains assembly private type 'Administrator'
+F:\OOPProjects\AviaSales\AviaSales\Administrator.h(9,11): message : see declaration of 'Administrator'
   SignUpForm.cpp
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,29): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,28): warning C4244: 'argument': conversion from 'wchar_t' to '_Elem', possible loss of data
+          with
+          [
+              _Elem=char
+          ]
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(18,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(29,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
   Generating Code...
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(69): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(87): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(139): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(157): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(69): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(87): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(139): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(157): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(69): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(87): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(139): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(157): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
+SignInForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@$$FYMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
+SignInForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@YMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
+SignInForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@$$FYM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
+SignInForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@YM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
+SignUpForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@$$FYMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
+SignUpForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@YMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
+SignUpForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@$$FYM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
+SignUpForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@YM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
 mysqlcppconn-static.lib(mysql_art_resultset.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_art_resultset.obj)' or at ''; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_prepared_statement.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_prepared_statement.obj)' or at ''; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_connection.obj)' or at ''; linking object as if no debug info
@@ -23,6 +82,7 @@ mysqlcppconn-static.lib(mysql_client_api.obj) : warning LNK4099: PDB '' was not 
 mysqlcppconn-static.lib(mysql_native_connection_wrapper.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_native_connection_wrapper.obj)' or at ''; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_native_resultset_wrapper.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_native_resultset_wrapper.obj)' or at ''; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj)' or at ''; linking object as if no debug info
+F:\OOPProjects\AviaSales\x64\Release\AviaSales.exe : warning LNK4088: image being generated due to /FORCE option; image may not run
   AviaSales.vcxproj -> F:\OOPProjects\AviaSales\x64\Release\AviaSales.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

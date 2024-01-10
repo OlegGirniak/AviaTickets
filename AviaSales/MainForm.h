@@ -1,4 +1,5 @@
 #pragma once
+#include "Customer.h"
 
 namespace AviaSales {
 
@@ -14,6 +15,8 @@ namespace AviaSales {
 	/// </summary>
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
+	public: Customer^ customer;
+
 	public:
 		MainForm(void)
 		{
@@ -21,6 +24,17 @@ namespace AviaSales {
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+
+		MainForm(Customer^ customer)
+		{
+			InitializeComponent();
+			
+			CustomerCashLabel->Text = customer->GetBalance().ToString() + "$";
+			UserMailLabel->Text = customer->Email;
+			UserPasswordLabel->Text = customer->Password;
+
+
 		}
 
 	protected:
@@ -143,7 +157,8 @@ private: System::Windows::Forms::Panel^ panel7;
 private: System::Windows::Forms::ComboBox^ MyTicketPanelComboBox;
 private: System::Windows::Forms::Panel^ UserCashPanel;
 private: System::Windows::Forms::Button^ RefillButton;
-private: System::Windows::Forms::Label^ label4;
+private: System::Windows::Forms::Label^ CustomerCashLabel;
+
 private: System::Windows::Forms::Panel^ SettingsPanel;
 private: System::Windows::Forms::Button^ deleteAccountButton;
 private: System::Windows::Forms::Button^ LogOutButton;
@@ -239,7 +254,7 @@ private: System::Windows::Forms::Button^ LogOutButton;
 			this->LogOutButton = (gcnew System::Windows::Forms::Button());
 			this->UserCashPanel = (gcnew System::Windows::Forms::Panel());
 			this->RefillButton = (gcnew System::Windows::Forms::Button());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->CustomerCashLabel = (gcnew System::Windows::Forms::Label());
 			this->TopPanel->SuspendLayout();
 			this->SideMenuPanel->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -506,10 +521,11 @@ private: System::Windows::Forms::Button^ LogOutButton;
 			this->AccountPanel->Controls->Add(this->EditEmailPicture);
 			this->AccountPanel->Controls->Add(this->UserPasswordLabel);
 			this->AccountPanel->Controls->Add(this->UserMailLabel);
+			this->AccountPanel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->AccountPanel->ForeColor = System::Drawing::Color::White;
-			this->AccountPanel->Location = System::Drawing::Point(518, 45);
+			this->AccountPanel->Location = System::Drawing::Point(0, 0);
 			this->AccountPanel->Name = L"AccountPanel";
-			this->AccountPanel->Size = System::Drawing::Size(183, 104);
+			this->AccountPanel->Size = System::Drawing::Size(736, 441);
 			this->AccountPanel->TabIndex = 2;
 			// 
 			// AccountIcon
@@ -592,7 +608,8 @@ private: System::Windows::Forms::Button^ LogOutButton;
 			this->BuyTicketsPanel->Controls->Add(this->panel6);
 			this->BuyTicketsPanel->Controls->Add(this->panel5);
 			this->BuyTicketsPanel->Controls->Add(this->panel4);
-			this->BuyTicketsPanel->Location = System::Drawing::Point(91, 274);
+			this->BuyTicketsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->BuyTicketsPanel->Location = System::Drawing::Point(0, 0);
 			this->BuyTicketsPanel->Name = L"BuyTicketsPanel";
 			this->BuyTicketsPanel->Size = System::Drawing::Size(736, 441);
 			this->BuyTicketsPanel->TabIndex = 18;
@@ -854,10 +871,11 @@ private: System::Windows::Forms::Button^ LogOutButton;
 			this->MyTicketsPanel->Controls->Add(this->label5);
 			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelTime);
 			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelChooseTicket);
+			this->MyTicketsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->MyTicketsPanel->ForeColor = System::Drawing::Color::White;
-			this->MyTicketsPanel->Location = System::Drawing::Point(301, 45);
+			this->MyTicketsPanel->Location = System::Drawing::Point(0, 0);
 			this->MyTicketsPanel->Name = L"MyTicketsPanel";
-			this->MyTicketsPanel->Size = System::Drawing::Size(188, 104);
+			this->MyTicketsPanel->Size = System::Drawing::Size(736, 441);
 			this->MyTicketsPanel->TabIndex = 17;
 			// 
 			// MyTicketPanelComboBox
@@ -1016,6 +1034,7 @@ private: System::Windows::Forms::Button^ LogOutButton;
 			// MainPanel
 			// 
 			this->MainPanel->BackColor = System::Drawing::Color::Silver;
+			this->MainPanel->Controls->Add(this->BuyTicketsPanel);
 			this->MainPanel->Controls->Add(this->SettingsPanel);
 			this->MainPanel->Controls->Add(this->UserCashPanel);
 			this->MainPanel->Controls->Add(this->MyTicketsPanel);
@@ -1030,12 +1049,12 @@ private: System::Windows::Forms::Button^ LogOutButton;
 			// 
 			this->SettingsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->SettingsPanel->Controls->Add(this->BuyTicketsPanel);
 			this->SettingsPanel->Controls->Add(this->deleteAccountButton);
 			this->SettingsPanel->Controls->Add(this->LogOutButton);
-			this->SettingsPanel->Location = System::Drawing::Point(68, 177);
+			this->SettingsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->SettingsPanel->Location = System::Drawing::Point(0, 0);
 			this->SettingsPanel->Name = L"SettingsPanel";
-			this->SettingsPanel->Size = System::Drawing::Size(212, 94);
+			this->SettingsPanel->Size = System::Drawing::Size(736, 441);
 			this->SettingsPanel->TabIndex = 14;
 			// 
 			// deleteAccountButton
@@ -1073,10 +1092,11 @@ private: System::Windows::Forms::Button^ LogOutButton;
 			this->UserCashPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->UserCashPanel->Controls->Add(this->RefillButton);
-			this->UserCashPanel->Controls->Add(this->label4);
-			this->UserCashPanel->Location = System::Drawing::Point(68, 45);
+			this->UserCashPanel->Controls->Add(this->CustomerCashLabel);
+			this->UserCashPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->UserCashPanel->Location = System::Drawing::Point(0, 0);
 			this->UserCashPanel->Name = L"UserCashPanel";
-			this->UserCashPanel->Size = System::Drawing::Size(212, 104);
+			this->UserCashPanel->Size = System::Drawing::Size(736, 441);
 			this->UserCashPanel->TabIndex = 23;
 			// 
 			// RefillButton
@@ -1094,17 +1114,17 @@ private: System::Windows::Forms::Button^ LogOutButton;
 			this->RefillButton->Text = L"REFILL";
 			this->RefillButton->UseVisualStyleBackColor = false;
 			// 
-			// label4
+			// CustomerCashLabel
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 27.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->CustomerCashLabel->AutoSize = true;
+			this->CustomerCashLabel->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->CustomerCashLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 27.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(317, 128);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(72, 48);
-			this->label4->TabIndex = 12;
-			this->label4->Text = L"0 $";
+			this->CustomerCashLabel->Location = System::Drawing::Point(317, 128);
+			this->CustomerCashLabel->Name = L"CustomerCashLabel";
+			this->CustomerCashLabel->Size = System::Drawing::Size(72, 48);
+			this->CustomerCashLabel->TabIndex = 12;
+			this->CustomerCashLabel->Text = L"0 $";
 			// 
 			// MainForm
 			// 

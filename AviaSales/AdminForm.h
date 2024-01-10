@@ -1,4 +1,5 @@
 #pragma once
+#include "Administrator.h"
 
 namespace AviaSales {
 
@@ -21,6 +22,16 @@ namespace AviaSales {
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+
+		AdminForm(Administrator^ admin)
+		{
+			InitializeComponent();
+			this->admin = admin;
+
+			AdminMailLabel->Text = this->admin->Email;
+			AdminPasswordLabel->Text = this->admin->Password;
+
 		}
 
 	protected:
@@ -145,6 +156,19 @@ namespace AviaSales {
 			this->MenuPicture = (gcnew System::Windows::Forms::PictureBox());
 			this->MenuLabel = (gcnew System::Windows::Forms::Label());
 			this->AdminMainPanel = (gcnew System::Windows::Forms::Panel());
+			this->PlanesPanel = (gcnew System::Windows::Forms::Panel());
+			this->EditPlaneButton = (gcnew System::Windows::Forms::Button());
+			this->AddPlaneButton = (gcnew System::Windows::Forms::Button());
+			this->LabelPlane = (gcnew System::Windows::Forms::Label());
+			this->DeletePlaneButton = (gcnew System::Windows::Forms::Button());
+			this->TicketsPanel = (gcnew System::Windows::Forms::Panel());
+			this->EditTciketsButton = (gcnew System::Windows::Forms::Button());
+			this->AddTicketsButton = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->DeleteTicketsButton = (gcnew System::Windows::Forms::Button());
+			this->SettingsPanel = (gcnew System::Windows::Forms::Panel());
+			this->deleteAccountButton = (gcnew System::Windows::Forms::Button());
+			this->LogOutButton = (gcnew System::Windows::Forms::Button());
 			this->CustomersPanel = (gcnew System::Windows::Forms::Panel());
 			this->DeleteTicketButton = (gcnew System::Windows::Forms::Button());
 			this->CoutnCustomerTicketsLabel = (gcnew System::Windows::Forms::Label());
@@ -152,19 +176,6 @@ namespace AviaSales {
 			this->ChooseTicketLabel = (gcnew System::Windows::Forms::Label());
 			this->CustomersComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->CustomersPanelChooseCustomerLabel = (gcnew System::Windows::Forms::Label());
-			this->SettingsPanel = (gcnew System::Windows::Forms::Panel());
-			this->deleteAccountButton = (gcnew System::Windows::Forms::Button());
-			this->LogOutButton = (gcnew System::Windows::Forms::Button());
-			this->TicketsPanel = (gcnew System::Windows::Forms::Panel());
-			this->EditTciketsButton = (gcnew System::Windows::Forms::Button());
-			this->AddTicketsButton = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->DeleteTicketsButton = (gcnew System::Windows::Forms::Button());
-			this->PlanesPanel = (gcnew System::Windows::Forms::Panel());
-			this->EditPlaneButton = (gcnew System::Windows::Forms::Button());
-			this->AddPlaneButton = (gcnew System::Windows::Forms::Button());
-			this->LabelPlane = (gcnew System::Windows::Forms::Label());
-			this->DeletePlaneButton = (gcnew System::Windows::Forms::Button());
 			this->AdminAccountPanel = (gcnew System::Windows::Forms::Panel());
 			this->AdminAccountIcon = (gcnew System::Windows::Forms::PictureBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
@@ -185,10 +196,10 @@ namespace AviaSales {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AccountPicture))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MenuPicture))->BeginInit();
 			this->AdminMainPanel->SuspendLayout();
-			this->CustomersPanel->SuspendLayout();
-			this->SettingsPanel->SuspendLayout();
-			this->TicketsPanel->SuspendLayout();
 			this->PlanesPanel->SuspendLayout();
+			this->TicketsPanel->SuspendLayout();
+			this->SettingsPanel->SuspendLayout();
+			this->CustomersPanel->SuspendLayout();
 			this->AdminAccountPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AdminAccountIcon))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditPasswordPicture))->BeginInit();
@@ -421,16 +432,203 @@ namespace AviaSales {
 			// AdminMainPanel
 			// 
 			this->AdminMainPanel->BackColor = System::Drawing::SystemColors::ButtonShadow;
-			this->AdminMainPanel->Controls->Add(this->CustomersPanel);
-			this->AdminMainPanel->Controls->Add(this->SettingsPanel);
-			this->AdminMainPanel->Controls->Add(this->TicketsPanel);
 			this->AdminMainPanel->Controls->Add(this->PlanesPanel);
+			this->AdminMainPanel->Controls->Add(this->TicketsPanel);
+			this->AdminMainPanel->Controls->Add(this->SettingsPanel);
+			this->AdminMainPanel->Controls->Add(this->CustomersPanel);
 			this->AdminMainPanel->Controls->Add(this->AdminAccountPanel);
 			this->AdminMainPanel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->AdminMainPanel->Location = System::Drawing::Point(208, 50);
 			this->AdminMainPanel->Name = L"AdminMainPanel";
 			this->AdminMainPanel->Size = System::Drawing::Size(736, 441);
 			this->AdminMainPanel->TabIndex = 3;
+			// 
+			// PlanesPanel
+			// 
+			this->PlanesPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->PlanesPanel->Controls->Add(this->EditPlaneButton);
+			this->PlanesPanel->Controls->Add(this->AddPlaneButton);
+			this->PlanesPanel->Controls->Add(this->LabelPlane);
+			this->PlanesPanel->Controls->Add(this->DeletePlaneButton);
+			this->PlanesPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->PlanesPanel->ForeColor = System::Drawing::Color::White;
+			this->PlanesPanel->Location = System::Drawing::Point(0, 0);
+			this->PlanesPanel->Name = L"PlanesPanel";
+			this->PlanesPanel->Size = System::Drawing::Size(736, 441);
+			this->PlanesPanel->TabIndex = 41;
+			// 
+			// EditPlaneButton
+			// 
+			this->EditPlaneButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->EditPlaneButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->EditPlaneButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->EditPlaneButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->EditPlaneButton->Location = System::Drawing::Point(441, 167);
+			this->EditPlaneButton->Name = L"EditPlaneButton";
+			this->EditPlaneButton->Size = System::Drawing::Size(134, 37);
+			this->EditPlaneButton->TabIndex = 44;
+			this->EditPlaneButton->Text = L"EDIT";
+			this->EditPlaneButton->UseVisualStyleBackColor = false;
+			// 
+			// AddPlaneButton
+			// 
+			this->AddPlaneButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->AddPlaneButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->AddPlaneButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->AddPlaneButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddPlaneButton->Location = System::Drawing::Point(161, 167);
+			this->AddPlaneButton->Name = L"AddPlaneButton";
+			this->AddPlaneButton->Size = System::Drawing::Size(134, 37);
+			this->AddPlaneButton->TabIndex = 43;
+			this->AddPlaneButton->Text = L"ADD";
+			this->AddPlaneButton->UseVisualStyleBackColor = false;
+			// 
+			// LabelPlane
+			// 
+			this->LabelPlane->AutoSize = true;
+			this->LabelPlane->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->LabelPlane->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->LabelPlane->Location = System::Drawing::Point(304, 83);
+			this->LabelPlane->Name = L"LabelPlane";
+			this->LabelPlane->Size = System::Drawing::Size(124, 37);
+			this->LabelPlane->TabIndex = 42;
+			this->LabelPlane->Text = L"PLANES";
+			// 
+			// DeletePlaneButton
+			// 
+			this->DeletePlaneButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->DeletePlaneButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->DeletePlaneButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->DeletePlaneButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->DeletePlaneButton->Location = System::Drawing::Point(301, 167);
+			this->DeletePlaneButton->Name = L"DeletePlaneButton";
+			this->DeletePlaneButton->Size = System::Drawing::Size(134, 37);
+			this->DeletePlaneButton->TabIndex = 41;
+			this->DeletePlaneButton->Text = L"DELETE";
+			this->DeletePlaneButton->UseVisualStyleBackColor = false;
+			// 
+			// TicketsPanel
+			// 
+			this->TicketsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->TicketsPanel->Controls->Add(this->EditTciketsButton);
+			this->TicketsPanel->Controls->Add(this->AddTicketsButton);
+			this->TicketsPanel->Controls->Add(this->label3);
+			this->TicketsPanel->Controls->Add(this->DeleteTicketsButton);
+			this->TicketsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->TicketsPanel->ForeColor = System::Drawing::Color::White;
+			this->TicketsPanel->Location = System::Drawing::Point(0, 0);
+			this->TicketsPanel->Name = L"TicketsPanel";
+			this->TicketsPanel->Size = System::Drawing::Size(736, 441);
+			this->TicketsPanel->TabIndex = 45;
+			// 
+			// EditTciketsButton
+			// 
+			this->EditTciketsButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->EditTciketsButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->EditTciketsButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->EditTciketsButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->EditTciketsButton->Location = System::Drawing::Point(441, 204);
+			this->EditTciketsButton->Name = L"EditTciketsButton";
+			this->EditTciketsButton->Size = System::Drawing::Size(134, 37);
+			this->EditTciketsButton->TabIndex = 48;
+			this->EditTciketsButton->Text = L"EDIT";
+			this->EditTciketsButton->UseVisualStyleBackColor = false;
+			// 
+			// AddTicketsButton
+			// 
+			this->AddTicketsButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->AddTicketsButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->AddTicketsButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->AddTicketsButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddTicketsButton->Location = System::Drawing::Point(161, 204);
+			this->AddTicketsButton->Name = L"AddTicketsButton";
+			this->AddTicketsButton->Size = System::Drawing::Size(134, 37);
+			this->AddTicketsButton->TabIndex = 47;
+			this->AddTicketsButton->Text = L"ADD";
+			this->AddTicketsButton->UseVisualStyleBackColor = false;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(304, 120);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(128, 37);
+			this->label3->TabIndex = 46;
+			this->label3->Text = L"TICKETS";
+			// 
+			// DeleteTicketsButton
+			// 
+			this->DeleteTicketsButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->DeleteTicketsButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->DeleteTicketsButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->DeleteTicketsButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->DeleteTicketsButton->Location = System::Drawing::Point(301, 204);
+			this->DeleteTicketsButton->Name = L"DeleteTicketsButton";
+			this->DeleteTicketsButton->Size = System::Drawing::Size(134, 37);
+			this->DeleteTicketsButton->TabIndex = 45;
+			this->DeleteTicketsButton->Text = L"DELETE";
+			this->DeleteTicketsButton->UseVisualStyleBackColor = false;
+			// 
+			// SettingsPanel
+			// 
+			this->SettingsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->SettingsPanel->Controls->Add(this->deleteAccountButton);
+			this->SettingsPanel->Controls->Add(this->LogOutButton);
+			this->SettingsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->SettingsPanel->ForeColor = System::Drawing::Color::White;
+			this->SettingsPanel->Location = System::Drawing::Point(0, 0);
+			this->SettingsPanel->Name = L"SettingsPanel";
+			this->SettingsPanel->Size = System::Drawing::Size(736, 441);
+			this->SettingsPanel->TabIndex = 49;
+			// 
+			// deleteAccountButton
+			// 
+			this->deleteAccountButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->deleteAccountButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->deleteAccountButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->deleteAccountButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->deleteAccountButton->Location = System::Drawing::Point(408, 181);
+			this->deleteAccountButton->Name = L"deleteAccountButton";
+			this->deleteAccountButton->Size = System::Drawing::Size(189, 79);
+			this->deleteAccountButton->TabIndex = 3;
+			this->deleteAccountButton->Text = L"Delete \r\nAcount";
+			this->deleteAccountButton->UseVisualStyleBackColor = false;
+			// 
+			// LogOutButton
+			// 
+			this->LogOutButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->LogOutButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->LogOutButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->LogOutButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->LogOutButton->Location = System::Drawing::Point(139, 181);
+			this->LogOutButton->Name = L"LogOutButton";
+			this->LogOutButton->Size = System::Drawing::Size(189, 79);
+			this->LogOutButton->TabIndex = 2;
+			this->LogOutButton->Text = L"Log Out";
+			this->LogOutButton->UseVisualStyleBackColor = false;
 			// 
 			// CustomersPanel
 			// 
@@ -525,193 +723,6 @@ namespace AviaSales {
 			this->CustomersPanelChooseCustomerLabel->Size = System::Drawing::Size(214, 31);
 			this->CustomersPanelChooseCustomerLabel->TabIndex = 23;
 			this->CustomersPanelChooseCustomerLabel->Text = L"Choose Customer";
-			// 
-			// SettingsPanel
-			// 
-			this->SettingsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->SettingsPanel->Controls->Add(this->deleteAccountButton);
-			this->SettingsPanel->Controls->Add(this->LogOutButton);
-			this->SettingsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->SettingsPanel->ForeColor = System::Drawing::Color::White;
-			this->SettingsPanel->Location = System::Drawing::Point(0, 0);
-			this->SettingsPanel->Name = L"SettingsPanel";
-			this->SettingsPanel->Size = System::Drawing::Size(736, 441);
-			this->SettingsPanel->TabIndex = 49;
-			// 
-			// deleteAccountButton
-			// 
-			this->deleteAccountButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->deleteAccountButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->deleteAccountButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->deleteAccountButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->deleteAccountButton->Location = System::Drawing::Point(408, 181);
-			this->deleteAccountButton->Name = L"deleteAccountButton";
-			this->deleteAccountButton->Size = System::Drawing::Size(189, 79);
-			this->deleteAccountButton->TabIndex = 3;
-			this->deleteAccountButton->Text = L"Delete \r\nAcount";
-			this->deleteAccountButton->UseVisualStyleBackColor = false;
-			// 
-			// LogOutButton
-			// 
-			this->LogOutButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->LogOutButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->LogOutButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->LogOutButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->LogOutButton->Location = System::Drawing::Point(139, 181);
-			this->LogOutButton->Name = L"LogOutButton";
-			this->LogOutButton->Size = System::Drawing::Size(189, 79);
-			this->LogOutButton->TabIndex = 2;
-			this->LogOutButton->Text = L"Log Out";
-			this->LogOutButton->UseVisualStyleBackColor = false;
-			// 
-			// TicketsPanel
-			// 
-			this->TicketsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->TicketsPanel->Controls->Add(this->EditTciketsButton);
-			this->TicketsPanel->Controls->Add(this->AddTicketsButton);
-			this->TicketsPanel->Controls->Add(this->label3);
-			this->TicketsPanel->Controls->Add(this->DeleteTicketsButton);
-			this->TicketsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->TicketsPanel->ForeColor = System::Drawing::Color::White;
-			this->TicketsPanel->Location = System::Drawing::Point(0, 0);
-			this->TicketsPanel->Name = L"TicketsPanel";
-			this->TicketsPanel->Size = System::Drawing::Size(736, 441);
-			this->TicketsPanel->TabIndex = 45;
-			// 
-			// EditTciketsButton
-			// 
-			this->EditTciketsButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->EditTciketsButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->EditTciketsButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->EditTciketsButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->EditTciketsButton->Location = System::Drawing::Point(441, 204);
-			this->EditTciketsButton->Name = L"EditTciketsButton";
-			this->EditTciketsButton->Size = System::Drawing::Size(134, 37);
-			this->EditTciketsButton->TabIndex = 48;
-			this->EditTciketsButton->Text = L"EDIT";
-			this->EditTciketsButton->UseVisualStyleBackColor = false;
-			// 
-			// AddTicketsButton
-			// 
-			this->AddTicketsButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->AddTicketsButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->AddTicketsButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->AddTicketsButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddTicketsButton->Location = System::Drawing::Point(161, 204);
-			this->AddTicketsButton->Name = L"AddTicketsButton";
-			this->AddTicketsButton->Size = System::Drawing::Size(134, 37);
-			this->AddTicketsButton->TabIndex = 47;
-			this->AddTicketsButton->Text = L"ADD";
-			this->AddTicketsButton->UseVisualStyleBackColor = false;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(304, 120);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(128, 37);
-			this->label3->TabIndex = 46;
-			this->label3->Text = L"TICKETS";
-			// 
-			// DeleteTicketsButton
-			// 
-			this->DeleteTicketsButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->DeleteTicketsButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->DeleteTicketsButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->DeleteTicketsButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->DeleteTicketsButton->Location = System::Drawing::Point(301, 204);
-			this->DeleteTicketsButton->Name = L"DeleteTicketsButton";
-			this->DeleteTicketsButton->Size = System::Drawing::Size(134, 37);
-			this->DeleteTicketsButton->TabIndex = 45;
-			this->DeleteTicketsButton->Text = L"DELETE";
-			this->DeleteTicketsButton->UseVisualStyleBackColor = false;
-			// 
-			// PlanesPanel
-			// 
-			this->PlanesPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->PlanesPanel->Controls->Add(this->EditPlaneButton);
-			this->PlanesPanel->Controls->Add(this->AddPlaneButton);
-			this->PlanesPanel->Controls->Add(this->LabelPlane);
-			this->PlanesPanel->Controls->Add(this->DeletePlaneButton);
-			this->PlanesPanel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->PlanesPanel->ForeColor = System::Drawing::Color::White;
-			this->PlanesPanel->Location = System::Drawing::Point(0, 0);
-			this->PlanesPanel->Name = L"PlanesPanel";
-			this->PlanesPanel->Size = System::Drawing::Size(736, 441);
-			this->PlanesPanel->TabIndex = 41;
-			// 
-			// EditPlaneButton
-			// 
-			this->EditPlaneButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->EditPlaneButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->EditPlaneButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->EditPlaneButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->EditPlaneButton->Location = System::Drawing::Point(441, 167);
-			this->EditPlaneButton->Name = L"EditPlaneButton";
-			this->EditPlaneButton->Size = System::Drawing::Size(134, 37);
-			this->EditPlaneButton->TabIndex = 44;
-			this->EditPlaneButton->Text = L"EDIT";
-			this->EditPlaneButton->UseVisualStyleBackColor = false;
-			// 
-			// AddPlaneButton
-			// 
-			this->AddPlaneButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->AddPlaneButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->AddPlaneButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->AddPlaneButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddPlaneButton->Location = System::Drawing::Point(161, 167);
-			this->AddPlaneButton->Name = L"AddPlaneButton";
-			this->AddPlaneButton->Size = System::Drawing::Size(134, 37);
-			this->AddPlaneButton->TabIndex = 43;
-			this->AddPlaneButton->Text = L"ADD";
-			this->AddPlaneButton->UseVisualStyleBackColor = false;
-			// 
-			// LabelPlane
-			// 
-			this->LabelPlane->AutoSize = true;
-			this->LabelPlane->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->LabelPlane->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->LabelPlane->Location = System::Drawing::Point(304, 83);
-			this->LabelPlane->Name = L"LabelPlane";
-			this->LabelPlane->Size = System::Drawing::Size(124, 37);
-			this->LabelPlane->TabIndex = 42;
-			this->LabelPlane->Text = L"PLANES";
-			// 
-			// DeletePlaneButton
-			// 
-			this->DeletePlaneButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->DeletePlaneButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->DeletePlaneButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->DeletePlaneButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->DeletePlaneButton->Location = System::Drawing::Point(301, 167);
-			this->DeletePlaneButton->Name = L"DeletePlaneButton";
-			this->DeletePlaneButton->Size = System::Drawing::Size(134, 37);
-			this->DeletePlaneButton->TabIndex = 41;
-			this->DeletePlaneButton->Text = L"DELETE";
-			this->DeletePlaneButton->UseVisualStyleBackColor = false;
 			// 
 			// AdminAccountPanel
 			// 
@@ -837,13 +848,13 @@ namespace AviaSales {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AccountPicture))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MenuPicture))->EndInit();
 			this->AdminMainPanel->ResumeLayout(false);
-			this->CustomersPanel->ResumeLayout(false);
-			this->CustomersPanel->PerformLayout();
-			this->SettingsPanel->ResumeLayout(false);
-			this->TicketsPanel->ResumeLayout(false);
-			this->TicketsPanel->PerformLayout();
 			this->PlanesPanel->ResumeLayout(false);
 			this->PlanesPanel->PerformLayout();
+			this->TicketsPanel->ResumeLayout(false);
+			this->TicketsPanel->PerformLayout();
+			this->SettingsPanel->ResumeLayout(false);
+			this->CustomersPanel->ResumeLayout(false);
+			this->CustomersPanel->PerformLayout();
 			this->AdminAccountPanel->ResumeLayout(false);
 			this->AdminAccountPanel->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AdminAccountIcon))->EndInit();
@@ -853,79 +864,85 @@ namespace AviaSales {
 
 		}
 #pragma endregion
-private: System::Void MenuCloseTimer_Tick(System::Object^ sender, System::EventArgs^ e) 
-{
-	if (AdminSideMenuPanel->Width > 55)
-	{
-		AdminSideMenuPanel->Width -= 5;
-	}
-	else
-	{
-		MenuCloseTimer->Stop();
-	}
-}
-private: System::Void MenuOpenTimer_Tick(System::Object^ sender, System::EventArgs^ e)
-{
-	if (AdminSideMenuPanel->Width < 190)
-	{
-		AdminSideMenuPanel->Width += 5;
-	}
-	else
-	{
-		MenuOpenTimer->Stop();
-	}
-}
-private: System::Void MenuPicture_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	if (AdminSideMenuPanel->Width > 55)
-	{
-		MenuCloseTimer->Start();
-	}
-	else
-	{
-		MenuOpenTimer->Start();
-	}
-}
-private: System::Void AccountLabel_Click(System::Object^ sender, System::EventArgs^ e) 
-{
-	AdminAccountPanel->Visible = true;
-	PlanesPanel->Visible = false;
-	SettingsPanel->Visible = false;
-	TicketsPanel->Visible = false;
-	CustomersPanel->Visible = false;
-}
 
-private: System::Void CustomersLabel_Click(System::Object^ sender, System::EventArgs^ e) 
-{
-	AdminAccountPanel->Visible = false;
-	PlanesPanel->Visible = false;
-	SettingsPanel->Visible = false;
-	TicketsPanel->Visible = false;
-	CustomersPanel->Visible = true;
-}
-private: System::Void PlanesLabel_Click(System::Object^ sender, System::EventArgs^ e) 
-{
-	AdminAccountPanel->Visible = false;
-	PlanesPanel->Visible = true;
-	SettingsPanel->Visible = false;
-	TicketsPanel->Visible = false;
-	CustomersPanel->Visible = false;
-}
-private: System::Void BuyTicketsLabel_Click(System::Object^ sender, System::EventArgs^ e) 
-{
-	AdminAccountPanel->Visible = false;
-	PlanesPanel->Visible = false;
-	SettingsPanel->Visible = false;
-	TicketsPanel->Visible = true;
-	CustomersPanel->Visible = false;
-}
-private: System::Void SettingsLabel_Click(System::Object^ sender, System::EventArgs^ e) 
-{
-	AdminAccountPanel->Visible = false;
-	PlanesPanel->Visible = false;
-	SettingsPanel->Visible = true;
-	TicketsPanel->Visible = false;
-	CustomersPanel->Visible = false;
-}
+	public: Administrator^ admin;
+
+	private: System::Void MenuCloseTimer_Tick(System::Object^ sender, System::EventArgs^ e) 
+	{
+		if (AdminSideMenuPanel->Width > 55)
+		{
+			AdminSideMenuPanel->Width -= 5;
+		}
+		else
+		{
+			MenuCloseTimer->Stop();
+		}
+	}
+	private: System::Void MenuOpenTimer_Tick(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (AdminSideMenuPanel->Width < 190)
+		{
+			AdminSideMenuPanel->Width += 5;
+		}
+		else
+		{
+			MenuOpenTimer->Stop();
+		}
+	}
+	private: System::Void MenuPicture_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (AdminSideMenuPanel->Width > 55)
+		{
+			MenuCloseTimer->Start();
+		}
+		else
+		{
+			MenuOpenTimer->Start();
+		}
+	}
+	private: System::Void AccountLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		AdminAccountPanel->Visible = true;
+		PlanesPanel->Visible = false;
+		SettingsPanel->Visible = false;
+		TicketsPanel->Visible = false;
+		CustomersPanel->Visible = false;
+	}
+
+	private: System::Void CustomersLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		AdminAccountPanel->Visible = false;
+		PlanesPanel->Visible = false;
+		SettingsPanel->Visible = false;
+		TicketsPanel->Visible = false;
+		CustomersPanel->Visible = true;
+	}
+
+	private: System::Void PlanesLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+	{	
+		AdminAccountPanel->Visible = false;
+		PlanesPanel->Visible = true;
+		SettingsPanel->Visible = false;
+		TicketsPanel->Visible = false;
+		CustomersPanel->Visible = false;
+	}
+
+	private: System::Void BuyTicketsLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		AdminAccountPanel->Visible = false;
+		PlanesPanel->Visible = false;
+		SettingsPanel->Visible = false;
+		TicketsPanel->Visible = true;
+		CustomersPanel->Visible = false;
+	}
+
+	private: System::Void SettingsLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+	{	
+		AdminAccountPanel->Visible = false;
+		PlanesPanel->Visible = false;
+		SettingsPanel->Visible = true;
+		TicketsPanel->Visible = false;
+		CustomersPanel->Visible = false;
+	}
 };
 }

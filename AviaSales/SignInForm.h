@@ -1,4 +1,7 @@
 #pragma once
+#include "SqlService.h"
+#include "SignUpForm.h"
+#include  "AdminForm.h"
 
 namespace AviaSales {
 
@@ -52,20 +55,9 @@ namespace AviaSales {
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Button^ SignUpButton;
-	private: System::Windows::Forms::Label^ ForgotPasswordLabel;
+
 
 	protected:
-
-
-
-
-
-
-
-
-
-
-
 
 
 	private:
@@ -92,7 +84,6 @@ namespace AviaSales {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->SignUpButton = (gcnew System::Windows::Forms::Button());
-			this->ForgotPasswordLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -121,6 +112,7 @@ namespace AviaSales {
 			this->IfDontAccountLabel->Size = System::Drawing::Size(190, 16);
 			this->IfDontAccountLabel->TabIndex = 2;
 			this->IfDontAccountLabel->Text = L"If you don\'t have ACCOUNT";
+			this->IfDontAccountLabel->Click += gcnew System::EventHandler(this, &SignInForm::IfDontAccountLabel_Click);
 			// 
 			// AviaSalesLabel
 			// 
@@ -224,19 +216,7 @@ namespace AviaSales {
 			this->SignUpButton->TabIndex = 7;
 			this->SignUpButton->Text = L"SIGN IN";
 			this->SignUpButton->UseVisualStyleBackColor = true;
-			// 
-			// ForgotPasswordLabel
-			// 
-			this->ForgotPasswordLabel->AutoSize = true;
-			this->ForgotPasswordLabel->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->ForgotPasswordLabel->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 8.25F, System::Drawing::FontStyle::Underline,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->ForgotPasswordLabel->ForeColor = System::Drawing::Color::White;
-			this->ForgotPasswordLabel->Location = System::Drawing::Point(415, 208);
-			this->ForgotPasswordLabel->Name = L"ForgotPasswordLabel";
-			this->ForgotPasswordLabel->Size = System::Drawing::Size(121, 15);
-			this->ForgotPasswordLabel->TabIndex = 3;
-			this->ForgotPasswordLabel->Text = L"Forgot PASSWORD\?";
+			this->SignUpButton->Click += gcnew System::EventHandler(this, &SignInForm::SignUpButton_Click);
 			// 
 			// SignInForm
 			// 
@@ -245,7 +225,6 @@ namespace AviaSales {
 				static_cast<System::Int32>(static_cast<System::Byte>(95)));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(694, 361);
-			this->Controls->Add(this->ForgotPasswordLabel);
 			this->Controls->Add(this->SignUpButton);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
@@ -267,7 +246,7 @@ namespace AviaSales {
 		}
 #pragma endregion
 	
-
+private: SqlService sqlService;
 
 private: System::Void EmailTextBox_Click(System::Object^ sender, System::EventArgs^ e) 
 {
@@ -292,6 +271,42 @@ private: System::Void PasswordTextBox_TextChanged(System::Object^ sender, System
 	if (PasswordTextBox->Text != "password")
 	{
 		PasswordTextBox->PasswordChar = '*';
+	}
+}
+private: System::Void IfDontAccountLabel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	this->Hide();
+
+	SignUpForm^ signUpForm = gcnew SignUpForm();
+	signUpForm->ShowDialog();
+}
+private: System::Void SignUpButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	User^ user = gcnew User(EmailTextBox->Text, PasswordTextBox->Text);
+
+	if (sqlService.CheckIfAdminExists(user) && sqlService.CheckCorrectPassword(user))
+	{
+		Administrator^ admin = sqlService.GetAdmin(user);
+
+		AdminForm^ adminForm = gcnew AdminForm(admin);
+
+		this->Hide();
+		adminForm->ShowDialog();
+
+	}
+	else if (sqlService.CheckIfCustomerExists(user) && sqlService.CheckCorrectPassword(user))
+	{
+		Customer^ customer = sqlService.GetCustomer(user);
+
+		this->Hide();
+
+		MainForm^ mainForm = gcnew MainForm(customer);
+		mainForm->ShowDialog();
+
+	}
+	else
+	{
+		MessageBox::Show("Invalid data", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
 };

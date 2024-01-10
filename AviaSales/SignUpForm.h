@@ -2,6 +2,7 @@
 
 #include "Customer.h"
 #include "SqlService.h"
+#include "MainForm.h"
 
 namespace AviaSales {
 
@@ -278,30 +279,39 @@ namespace AviaSales {
 		}
 	}
 
-private: System::Void PasswordAgainTextBox_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	if (PasswordAgainTextBox->Text == "password again")
+	private: System::Void PasswordAgainTextBox_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		PasswordAgainTextBox->Text = "";
-		PasswordAgainTextBox->ForeColor = Color::White;
+		if (PasswordAgainTextBox->Text == "password again")
+		{
+			PasswordAgainTextBox->Text = "";
+			PasswordAgainTextBox->ForeColor = Color::White;
+		}
 	}
-}
 
-private: System::Void SignUpButton_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	//create new customer
-
-	if (EmailTextBox->Text != "email" && PasswordTextBox->Text != "password" 
-		&& PasswordTextBox->Text == PasswordAgainTextBox->Text)
+	private: System::Void SignUpButton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		//create new customer
-		Customer newCustomer(EmailTextBox->Text, PasswordTextBox->Text);
 
-		//create sql service
-		SqlService sqlService;
+		if (EmailTextBox->Text != "email" && PasswordTextBox->Text != "password" 
+			&& PasswordTextBox->Text == PasswordAgainTextBox->Text 
+			&& EmailTextBox->Text->Length > 3 && PasswordTextBox->Text->Length > 3)
+		{
+			//create new customer
+			Customer newCustomer(EmailTextBox->Text, PasswordTextBox->Text, 0);
 
-		sqlService.AddCustomer(% newCustomer);
+			//create sql service
+			SqlService sqlService;
+
+			sqlService.AddCustomer(% newCustomer);
+			this->Hide();
+
+			MainForm^ mainForm = gcnew MainForm(% newCustomer);
+			mainForm->ShowDialog();
+		}
+		else
+		{
+			MessageBox::Show("Invalid data", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
 	}
-}
 };
 }

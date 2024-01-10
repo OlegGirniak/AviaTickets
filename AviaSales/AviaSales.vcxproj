@@ -114,7 +114,7 @@
       <AdditionalDependencies>mysqlcppconn-static.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>E:\C++Packages\mysql-connector-c++-8.2.0-winx64\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>NotSet</SubSystem>
       <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -149,6 +149,7 @@
     <ClInclude Include="MenuForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="OtherFunc.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="SignInForm.h">
       <FileType>CppForm</FileType>

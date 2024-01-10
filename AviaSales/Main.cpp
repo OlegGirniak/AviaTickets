@@ -13,8 +13,8 @@ int main(array<String^>^ args)
 	Application::SetCompatibleTextRenderingDefault(false);
 	Application::EnableVisualStyles();
 
-	AviaSales::SignUpForm signUpForm;
-	Application::Run(% signUpForm);
+	AviaSales::SignInForm signInForm;
+	Application::Run(% signInForm);
 
 	return 0;
 }

@@ -17,9 +17,6 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Class AviaSales.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -30,13 +27,22 @@ Class User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     get_Email(): PrivateScope, Public, HideBySig, SpecialName
     get_Password(): PrivateScope, Public, HideBySig, SpecialName
     set_Password(String): PrivateScope, Public, HideBySig, SpecialName
-Class AviaSales.SignInForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class AviaSales.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(Administrator): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Administrator admin : Public
 Class AviaSales.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(Customer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Customer customer : Public
 Class AviaSales.SignUpForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class AviaSales.SignInForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class AviaSales.MenuForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

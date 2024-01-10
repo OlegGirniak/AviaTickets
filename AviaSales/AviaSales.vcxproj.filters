@@ -83,5 +83,8 @@
     <ClInclude Include="SqlService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OtherFunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

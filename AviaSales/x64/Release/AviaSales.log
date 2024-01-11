@@ -5,14 +5,45 @@ F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,28): warning C4244: 'argument':
           [
               _Elem=char
           ]
-F:\OOPProjects\AviaSales\AviaSales\MainForm.h(18,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(28,13): warning C4677: 'VerifyForm': signature of non-private member contains assembly private type 'Customer'
 F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
-F:\OOPProjects\AviaSales\AviaSales\MainForm.h(29,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(147,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
 F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(21,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(32,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1231,32): warning C4677: 'mainCustomer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1232,32): warning C4677: 'sqlService': signature of non-private member contains assembly private type 'SqlService'
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(20,11): message : see declaration of 'SqlService'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1233,37): warning C4677: 'emailService': signature of non-private member contains assembly private type 'EmailService'
+F:\OOPProjects\AviaSales\AviaSales\EmailService.h(15,11): message : see declaration of 'EmailService'
 F:\OOPProjects\AviaSales\AviaSales\AdminForm.h(27,12): warning C4677: 'AdminForm': signature of non-private member contains assembly private type 'Administrator'
 F:\OOPProjects\AviaSales\AviaSales\Administrator.h(9,11): message : see declaration of 'Administrator'
 F:\OOPProjects\AviaSales\AviaSales\AdminForm.h(868,30): warning C4677: 'admin': signature of non-private member contains assembly private type 'Administrator'
 F:\OOPProjects\AviaSales\AviaSales\Administrator.h(9,11): message : see declaration of 'Administrator'
+  MainForm.cpp
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,29): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,28): warning C4244: 'argument': conversion from 'wchar_t' to '_Elem', possible loss of data
+          with
+          [
+              _Elem=char
+          ]
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(28,13): warning C4677: 'VerifyForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(147,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(21,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(32,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1231,32): warning C4677: 'mainCustomer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1232,32): warning C4677: 'sqlService': signature of non-private member contains assembly private type 'SqlService'
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(20,11): message : see declaration of 'SqlService'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1233,37): warning C4677: 'emailService': signature of non-private member contains assembly private type 'EmailService'
+F:\OOPProjects\AviaSales\AviaSales\EmailService.h(15,11): message : see declaration of 'EmailService'
   SignInForm.cpp
 F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,29): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,28): warning C4244: 'argument': conversion from 'wchar_t' to '_Elem', possible loss of data
@@ -20,10 +51,20 @@ F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,28): warning C4244: 'argument':
           [
               _Elem=char
           ]
-F:\OOPProjects\AviaSales\AviaSales\MainForm.h(18,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(28,13): warning C4677: 'VerifyForm': signature of non-private member contains assembly private type 'Customer'
 F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
-F:\OOPProjects\AviaSales\AviaSales\MainForm.h(29,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(147,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
 F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(21,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(32,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1231,32): warning C4677: 'mainCustomer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1232,32): warning C4677: 'sqlService': signature of non-private member contains assembly private type 'SqlService'
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(20,11): message : see declaration of 'SqlService'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1233,37): warning C4677: 'emailService': signature of non-private member contains assembly private type 'EmailService'
+F:\OOPProjects\AviaSales\AviaSales\EmailService.h(15,11): message : see declaration of 'EmailService'
 F:\OOPProjects\AviaSales\AviaSales\AdminForm.h(27,12): warning C4677: 'AdminForm': signature of non-private member contains assembly private type 'Administrator'
 F:\OOPProjects\AviaSales\AviaSales\Administrator.h(9,11): message : see declaration of 'Administrator'
 F:\OOPProjects\AviaSales\AviaSales\AdminForm.h(868,30): warning C4677: 'admin': signature of non-private member contains assembly private type 'Administrator'
@@ -35,23 +76,56 @@ F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,28): warning C4244: 'argument':
           [
               _Elem=char
           ]
-F:\OOPProjects\AviaSales\AviaSales\MainForm.h(18,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(28,13): warning C4677: 'VerifyForm': signature of non-private member contains assembly private type 'Customer'
 F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
-F:\OOPProjects\AviaSales\AviaSales\MainForm.h(29,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(147,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(21,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(32,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1231,32): warning C4677: 'mainCustomer': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1232,32): warning C4677: 'sqlService': signature of non-private member contains assembly private type 'SqlService'
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(20,11): message : see declaration of 'SqlService'
+F:\OOPProjects\AviaSales\AviaSales\MainForm.h(1233,37): warning C4677: 'emailService': signature of non-private member contains assembly private type 'EmailService'
+F:\OOPProjects\AviaSales\AviaSales\EmailService.h(15,11): message : see declaration of 'EmailService'
+  VerifyForm.cpp
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,29): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+F:\OOPProjects\AviaSales\AviaSales\OtherFunc.h(9,28): warning C4244: 'argument': conversion from 'wchar_t' to '_Elem', possible loss of data
+          with
+          [
+              _Elem=char
+          ]
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(28,13): warning C4677: 'VerifyForm': signature of non-private member contains assembly private type 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
+F:\OOPProjects\AviaSales\AviaSales\VerifyForm.h(147,28): warning C4677: 'customer': signature of non-private member contains assembly private type 'Customer'
 F:\OOPProjects\AviaSales\AviaSales\Customer.h(9,11): message : see declaration of 'Customer'
   Generating Code...
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(69): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(87): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(139): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(157): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(69): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(87): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(139): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(157): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(69): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(87): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(139): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
-F:\OOPProjects\AviaSales\AviaSales\SqlService.h(157): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(79): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(97): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(150): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(168): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(79): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(97): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(150): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(168): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(79): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(97): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(150): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(168): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(79): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(97): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(150): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(168): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(79): warning C4715: 'SqlService::CheckIfCustomerExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(97): warning C4715: 'SqlService::CheckIfAdminExists': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(150): warning C4715: 'SqlService::GetCustomer': not all control paths return a value
+F:\OOPProjects\AviaSales\AviaSales\SqlService.h(168): warning C4715: 'SqlService::GetAdmin': not all control paths return a value
+MainForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@$$FYMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
+MainForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@YMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
+MainForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@$$FYM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
+MainForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@YM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
 SignInForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@$$FYMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
 SignInForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@YMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
 SignInForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@$$FYM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
@@ -60,6 +134,10 @@ SignUpForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSys
 SignUpForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@YMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
 SignUpForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@$$FYM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
 SignUpForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@YM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
+VerifyForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@$$FYMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
+VerifyForm.obj : warning LNK4006: "class System::String ^ __clrcall ConvertToSystemString(class sql::SQLString)" (?ConvertToSystemString@@YMPE$AAVString@System@@VSQLString@sql@@@Z) already defined in Main.obj; second definition ignored
+VerifyForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@$$FYM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
+VerifyForm.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __clrcall ConvertToString(class System::String ^)" (?ConvertToString@@YM?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PE$AAVString@System@@@Z) already defined in Main.obj; second definition ignored
 mysqlcppconn-static.lib(mysql_art_resultset.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_art_resultset.obj)' or at ''; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_prepared_statement.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_prepared_statement.obj)' or at ''; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_connection.obj)' or at ''; linking object as if no debug info

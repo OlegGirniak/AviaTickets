@@ -297,7 +297,7 @@ namespace AviaSales {
 			&& EmailTextBox->Text->Length > 3 && PasswordTextBox->Text->Length > 3)
 		{
 			//create new customer
-			Customer newCustomer(EmailTextBox->Text, PasswordTextBox->Text, 0);
+			Customer newCustomer(EmailTextBox->Text, PasswordTextBox->Text, 0, false);
 
 			//create sql service
 			SqlService sqlService;

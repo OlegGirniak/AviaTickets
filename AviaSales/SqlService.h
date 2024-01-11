@@ -28,7 +28,7 @@ public:
 	SqlService()
 	{
 		driver = sql::mysql::get_mysql_driver_instance();
-		con = driver->connect("tcp://127.0.0.1:3306", "****", "****");
+		con = driver->connect("tcp://127.0.0.1:3306", "", "");
 		con->setSchema("AviaTickets");
 	}
 
@@ -36,13 +36,23 @@ public:
 	{
 		if (!(CheckIfCustomerExists(newCustomer) && CheckIfAdminExists(newCustomer)))
 		{
-			sql::PreparedStatement* insertStmt = con->prepareStatement("INSERT INTO Customers (email, password, countOfTickets, balance) VALUES (?, ?, 0, 0)");
-			insertStmt->setString(1, ConvertToString(newCustomer->Email));
-			insertStmt->setString(2, ConvertToString(newCustomer->Password));
+			try
+			{
+				sql::PreparedStatement* insertStmt = con->prepareStatement("INSERT INTO Customers (email, password, countOfTickets, balance, ifAccountVerified) VALUES (?, ?, 0, 0, 0)");
+				insertStmt->setString(1, ConvertToString(newCustomer->Email));
+				insertStmt->setString(2, ConvertToString(newCustomer->Password));
+			/*	insertStmt->setString(3, 0);
+				insertStmt->setString(4, 0);
+				insertStmt->setString(5, 0);*/
 
-			insertStmt->executeUpdate();
+				insertStmt->executeUpdate();
 
-			delete insertStmt;
+				delete insertStmt;
+			}
+			catch (const std::exception& e)
+			{
+				std::cout << e.what() << "\n";
+			}
 		}
 		else
 		{
@@ -131,8 +141,9 @@ public:
 			String^ customerEmail = ConvertToSystemString(res->getString("email"));
 			String^ customerPassword = ConvertToSystemString(res->getString("password"));
 			int customerBalance = res->getInt("balance");
+			bool ifAccountVerified = res->getBoolean("ifAccountVerified");
 
-			Customer^ customer = gcnew Customer(customerEmail, customerPassword, customerBalance);
+			Customer^ customer = gcnew Customer(customerEmail, customerPassword, customerBalance, ifAccountVerified);
 
 			return customer;
 		}
@@ -154,5 +165,15 @@ public:
 
 			return admin;	
 		}
+	}
+
+	void VerifyAccount(Customer^ customer)
+	{
+		sql::PreparedStatement* pstmt = con->prepareStatement("UPDATE Customers SET ifAccountverified = 1 WHERE email = ?");
+
+		pstmt->setString(1, ConvertToString(customer->Email));
+
+		res = pstmt->executeQuery();
+		
 	}
 };

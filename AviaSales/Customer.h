@@ -10,15 +10,16 @@ ref class Customer : public User
 {
 	List<Ticket^>^ tickets;
     int balance;
+    bool accountVerify;
 
 public:
 
-    Customer(String^ userName, String^ userPassword, int balance)
-        : User(userName, userPassword), tickets(gcnew List<Ticket^>()), balance(balance)
+    Customer(String^ userName, String^ userPassword, int balance, bool accountVerify)
+        : User(userName, userPassword), tickets(gcnew List<Ticket^>()), balance(balance), accountVerify(accountVerify)
     { }
 
-    Customer(String^ userName, String^ userPassword, List<Ticket^>^ customerTickets, int balance)
-        : User(userName, userPassword), tickets(customerTickets), balance(balance)
+    Customer(String^ userName, String^ userPassword, List<Ticket^>^ customerTickets, int balance, bool accountVerify)
+        : User(userName, userPassword), tickets(customerTickets), balance(balance), accountVerify(accountVerify)
     {
         tickets = customerTickets;
     }
@@ -31,6 +32,11 @@ public:
     void SetBalance(int newBalance)
     {
         balance = newBalance;
+    }
+
+    bool Verified()
+    {
+        return accountVerify;
     }
 
 };

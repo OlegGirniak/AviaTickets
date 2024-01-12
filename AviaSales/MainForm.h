@@ -226,6 +226,15 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			this->MenuTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->MenuTimerOpen = (gcnew System::Windows::Forms::Timer(this->components));
 			this->AccountPanel = (gcnew System::Windows::Forms::Panel());
+			this->VerifyStatusLabel = (gcnew System::Windows::Forms::Label());
+			this->VerifyAccountButton = (gcnew System::Windows::Forms::Button());
+			this->AccountIcon = (gcnew System::Windows::Forms::PictureBox());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->EditPasswordPicture = (gcnew System::Windows::Forms::PictureBox());
+			this->EditEmailPicture = (gcnew System::Windows::Forms::PictureBox());
+			this->UserPasswordLabel = (gcnew System::Windows::Forms::Label());
+			this->UserMailLabel = (gcnew System::Windows::Forms::Label());
 			this->MyTicketsPanel = (gcnew System::Windows::Forms::Panel());
 			this->MyTicketPanelComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->panel10 = (gcnew System::Windows::Forms::Panel());
@@ -244,15 +253,6 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			this->SettingsPanel = (gcnew System::Windows::Forms::Panel());
 			this->deleteAccountButton = (gcnew System::Windows::Forms::Button());
 			this->LogOutButton = (gcnew System::Windows::Forms::Button());
-			this->VerifyStatusLabel = (gcnew System::Windows::Forms::Label());
-			this->VerifyAccountButton = (gcnew System::Windows::Forms::Button());
-			this->AccountIcon = (gcnew System::Windows::Forms::PictureBox());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->EditPasswordPicture = (gcnew System::Windows::Forms::PictureBox());
-			this->EditEmailPicture = (gcnew System::Windows::Forms::PictureBox());
-			this->UserPasswordLabel = (gcnew System::Windows::Forms::Label());
-			this->UserMailLabel = (gcnew System::Windows::Forms::Label());
 			this->BuyTicketsPanel = (gcnew System::Windows::Forms::Panel());
 			this->BuyTicketLabel = (gcnew System::Windows::Forms::Button());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
@@ -288,11 +288,11 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AccountPicture))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MenuPicture))->BeginInit();
 			this->AccountPanel->SuspendLayout();
-			this->MyTicketsPanel->SuspendLayout();
-			this->SettingsPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AccountIcon))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditPasswordPicture))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditEmailPicture))->BeginInit();
+			this->MyTicketsPanel->SuspendLayout();
+			this->SettingsPanel->SuspendLayout();
 			this->BuyTicketsPanel->SuspendLayout();
 			this->panel6->SuspendLayout();
 			this->panel5->SuspendLayout();
@@ -537,8 +537,6 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			// 
 			this->AccountPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->AccountPanel->Controls->Add(this->MyTicketsPanel);
-			this->AccountPanel->Controls->Add(this->SettingsPanel);
 			this->AccountPanel->Controls->Add(this->VerifyStatusLabel);
 			this->AccountPanel->Controls->Add(this->VerifyAccountButton);
 			this->AccountPanel->Controls->Add(this->AccountIcon);
@@ -548,12 +546,112 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			this->AccountPanel->Controls->Add(this->EditEmailPicture);
 			this->AccountPanel->Controls->Add(this->UserPasswordLabel);
 			this->AccountPanel->Controls->Add(this->UserMailLabel);
-			this->AccountPanel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->AccountPanel->ForeColor = System::Drawing::Color::White;
-			this->AccountPanel->Location = System::Drawing::Point(0, 0);
+			this->AccountPanel->Location = System::Drawing::Point(8, 6);
 			this->AccountPanel->Name = L"AccountPanel";
-			this->AccountPanel->Size = System::Drawing::Size(736, 441);
+			this->AccountPanel->Size = System::Drawing::Size(165, 77);
 			this->AccountPanel->TabIndex = 2;
+			// 
+			// VerifyStatusLabel
+			// 
+			this->VerifyStatusLabel->AutoSize = true;
+			this->VerifyStatusLabel->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->VerifyStatusLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 20.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->VerifyStatusLabel->ForeColor = System::Drawing::Color::Brown;
+			this->VerifyStatusLabel->Location = System::Drawing::Point(299, 14);
+			this->VerifyStatusLabel->Name = L"VerifyStatusLabel";
+			this->VerifyStatusLabel->Size = System::Drawing::Size(173, 34);
+			this->VerifyStatusLabel->TabIndex = 25;
+			this->VerifyStatusLabel->Text = L"Not Verified";
+			// 
+			// VerifyAccountButton
+			// 
+			this->VerifyAccountButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->VerifyAccountButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->VerifyAccountButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->VerifyAccountButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->VerifyAccountButton->Location = System::Drawing::Point(307, 321);
+			this->VerifyAccountButton->Name = L"VerifyAccountButton";
+			this->VerifyAccountButton->Size = System::Drawing::Size(175, 54);
+			this->VerifyAccountButton->TabIndex = 24;
+			this->VerifyAccountButton->Text = L"VERIFY";
+			this->VerifyAccountButton->UseVisualStyleBackColor = false;
+			this->VerifyAccountButton->Click += gcnew System::EventHandler(this, &MainForm::VerifyAccountButton_Click);
+			// 
+			// AccountIcon
+			// 
+			this->AccountIcon->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AccountIcon.Image")));
+			this->AccountIcon->Location = System::Drawing::Point(311, 49);
+			this->AccountIcon->Name = L"AccountIcon";
+			this->AccountIcon->Size = System::Drawing::Size(150, 150);
+			this->AccountIcon->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->AccountIcon->TabIndex = 17;
+			this->AccountIcon->TabStop = false;
+			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::White;
+			this->panel3->Location = System::Drawing::Point(282, 297);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(220, 2);
+			this->panel3->TabIndex = 16;
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->Location = System::Drawing::Point(282, 245);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(220, 2);
+			this->panel2->TabIndex = 15;
+			// 
+			// EditPasswordPicture
+			// 
+			this->EditPasswordPicture->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->EditPasswordPicture->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"EditPasswordPicture.Image")));
+			this->EditPasswordPicture->Location = System::Drawing::Point(476, 266);
+			this->EditPasswordPicture->Name = L"EditPasswordPicture";
+			this->EditPasswordPicture->Size = System::Drawing::Size(25, 25);
+			this->EditPasswordPicture->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->EditPasswordPicture->TabIndex = 14;
+			this->EditPasswordPicture->TabStop = false;
+			// 
+			// EditEmailPicture
+			// 
+			this->EditEmailPicture->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->EditEmailPicture->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"EditEmailPicture.Image")));
+			this->EditEmailPicture->Location = System::Drawing::Point(476, 214);
+			this->EditEmailPicture->Name = L"EditEmailPicture";
+			this->EditEmailPicture->Size = System::Drawing::Size(25, 25);
+			this->EditEmailPicture->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->EditEmailPicture->TabIndex = 13;
+			this->EditEmailPicture->TabStop = false;
+			// 
+			// UserPasswordLabel
+			// 
+			this->UserPasswordLabel->AutoSize = true;
+			this->UserPasswordLabel->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->UserPasswordLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->UserPasswordLabel->Location = System::Drawing::Point(279, 265);
+			this->UserPasswordLabel->Name = L"UserPasswordLabel";
+			this->UserPasswordLabel->Size = System::Drawing::Size(120, 21);
+			this->UserPasswordLabel->TabIndex = 12;
+			this->UserPasswordLabel->Text = L"User password";
+			// 
+			// UserMailLabel
+			// 
+			this->UserMailLabel->AutoSize = true;
+			this->UserMailLabel->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->UserMailLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->UserMailLabel->Location = System::Drawing::Point(279, 214);
+			this->UserMailLabel->Name = L"UserMailLabel";
+			this->UserMailLabel->Size = System::Drawing::Size(91, 21);
+			this->UserMailLabel->TabIndex = 11;
+			this->UserMailLabel->Text = L"User email";
 			// 
 			// MyTicketsPanel
 			// 
@@ -574,9 +672,9 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelTime);
 			this->MyTicketsPanel->Controls->Add(this->MyTicketPanelChooseTicket);
 			this->MyTicketsPanel->ForeColor = System::Drawing::Color::White;
-			this->MyTicketsPanel->Location = System::Drawing::Point(18, 110);
+			this->MyTicketsPanel->Location = System::Drawing::Point(9, 122);
 			this->MyTicketsPanel->Name = L"MyTicketsPanel";
-			this->MyTicketsPanel->Size = System::Drawing::Size(116, 50);
+			this->MyTicketsPanel->Size = System::Drawing::Size(164, 83);
 			this->MyTicketsPanel->TabIndex = 17;
 			// 
 			// MyTicketPanelComboBox
@@ -738,9 +836,9 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->SettingsPanel->Controls->Add(this->deleteAccountButton);
 			this->SettingsPanel->Controls->Add(this->LogOutButton);
-			this->SettingsPanel->Location = System::Drawing::Point(30, 23);
+			this->SettingsPanel->Location = System::Drawing::Point(179, 6);
 			this->SettingsPanel->Name = L"SettingsPanel";
-			this->SettingsPanel->Size = System::Drawing::Size(85, 50);
+			this->SettingsPanel->Size = System::Drawing::Size(134, 77);
 			this->SettingsPanel->TabIndex = 14;
 			// 
 			// deleteAccountButton
@@ -773,107 +871,6 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			this->LogOutButton->Text = L"Log Out";
 			this->LogOutButton->UseVisualStyleBackColor = false;
 			// 
-			// VerifyStatusLabel
-			// 
-			this->VerifyStatusLabel->AutoSize = true;
-			this->VerifyStatusLabel->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->VerifyStatusLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 20.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->VerifyStatusLabel->ForeColor = System::Drawing::Color::Brown;
-			this->VerifyStatusLabel->Location = System::Drawing::Point(299, 14);
-			this->VerifyStatusLabel->Name = L"VerifyStatusLabel";
-			this->VerifyStatusLabel->Size = System::Drawing::Size(173, 34);
-			this->VerifyStatusLabel->TabIndex = 25;
-			this->VerifyStatusLabel->Text = L"Not Verified";
-			// 
-			// VerifyAccountButton
-			// 
-			this->VerifyAccountButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->VerifyAccountButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->VerifyAccountButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->VerifyAccountButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->VerifyAccountButton->Location = System::Drawing::Point(307, 321);
-			this->VerifyAccountButton->Name = L"VerifyAccountButton";
-			this->VerifyAccountButton->Size = System::Drawing::Size(175, 54);
-			this->VerifyAccountButton->TabIndex = 24;
-			this->VerifyAccountButton->Text = L"VERIFY";
-			this->VerifyAccountButton->UseVisualStyleBackColor = false;
-			this->VerifyAccountButton->Click += gcnew System::EventHandler(this, &MainForm::VerifyAccountButton_Click);
-			// 
-			// AccountIcon
-			// 
-			this->AccountIcon->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AccountIcon.Image")));
-			this->AccountIcon->Location = System::Drawing::Point(311, 49);
-			this->AccountIcon->Name = L"AccountIcon";
-			this->AccountIcon->Size = System::Drawing::Size(150, 150);
-			this->AccountIcon->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->AccountIcon->TabIndex = 17;
-			this->AccountIcon->TabStop = false;
-			// 
-			// panel3
-			// 
-			this->panel3->BackColor = System::Drawing::Color::White;
-			this->panel3->Location = System::Drawing::Point(282, 297);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(220, 2);
-			this->panel3->TabIndex = 16;
-			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::Color::White;
-			this->panel2->Location = System::Drawing::Point(282, 245);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(220, 2);
-			this->panel2->TabIndex = 15;
-			// 
-			// EditPasswordPicture
-			// 
-			this->EditPasswordPicture->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->EditPasswordPicture->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"EditPasswordPicture.Image")));
-			this->EditPasswordPicture->Location = System::Drawing::Point(476, 266);
-			this->EditPasswordPicture->Name = L"EditPasswordPicture";
-			this->EditPasswordPicture->Size = System::Drawing::Size(25, 25);
-			this->EditPasswordPicture->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->EditPasswordPicture->TabIndex = 14;
-			this->EditPasswordPicture->TabStop = false;
-			// 
-			// EditEmailPicture
-			// 
-			this->EditEmailPicture->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->EditEmailPicture->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"EditEmailPicture.Image")));
-			this->EditEmailPicture->Location = System::Drawing::Point(476, 214);
-			this->EditEmailPicture->Name = L"EditEmailPicture";
-			this->EditEmailPicture->Size = System::Drawing::Size(25, 25);
-			this->EditEmailPicture->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->EditEmailPicture->TabIndex = 13;
-			this->EditEmailPicture->TabStop = false;
-			// 
-			// UserPasswordLabel
-			// 
-			this->UserPasswordLabel->AutoSize = true;
-			this->UserPasswordLabel->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->UserPasswordLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->UserPasswordLabel->Location = System::Drawing::Point(279, 265);
-			this->UserPasswordLabel->Name = L"UserPasswordLabel";
-			this->UserPasswordLabel->Size = System::Drawing::Size(120, 21);
-			this->UserPasswordLabel->TabIndex = 12;
-			this->UserPasswordLabel->Text = L"User password";
-			// 
-			// UserMailLabel
-			// 
-			this->UserMailLabel->AutoSize = true;
-			this->UserMailLabel->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->UserMailLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->UserMailLabel->Location = System::Drawing::Point(279, 214);
-			this->UserMailLabel->Name = L"UserMailLabel";
-			this->UserMailLabel->Size = System::Drawing::Size(91, 21);
-			this->UserMailLabel->TabIndex = 11;
-			this->UserMailLabel->Text = L"User email";
-			// 
 			// BuyTicketsPanel
 			// 
 			this->BuyTicketsPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
@@ -882,10 +879,9 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			this->BuyTicketsPanel->Controls->Add(this->panel6);
 			this->BuyTicketsPanel->Controls->Add(this->panel5);
 			this->BuyTicketsPanel->Controls->Add(this->panel4);
-			this->BuyTicketsPanel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->BuyTicketsPanel->Location = System::Drawing::Point(0, 0);
+			this->BuyTicketsPanel->Location = System::Drawing::Point(8, 220);
 			this->BuyTicketsPanel->Name = L"BuyTicketsPanel";
-			this->BuyTicketsPanel->Size = System::Drawing::Size(736, 441);
+			this->BuyTicketsPanel->Size = System::Drawing::Size(165, 95);
 			this->BuyTicketsPanel->TabIndex = 18;
 			// 
 			// BuyTicketLabel
@@ -1130,9 +1126,11 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			// MainPanel
 			// 
 			this->MainPanel->BackColor = System::Drawing::Color::Silver;
-			this->MainPanel->Controls->Add(this->AccountPanel);
 			this->MainPanel->Controls->Add(this->BuyTicketsPanel);
 			this->MainPanel->Controls->Add(this->UserCashPanel);
+			this->MainPanel->Controls->Add(this->MyTicketsPanel);
+			this->MainPanel->Controls->Add(this->AccountPanel);
+			this->MainPanel->Controls->Add(this->SettingsPanel);
 			this->MainPanel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->MainPanel->Location = System::Drawing::Point(208, 50);
 			this->MainPanel->Name = L"MainPanel";
@@ -1145,10 +1143,9 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->UserCashPanel->Controls->Add(this->RefillButton);
 			this->UserCashPanel->Controls->Add(this->CustomerCashLabel);
-			this->UserCashPanel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->UserCashPanel->Location = System::Drawing::Point(0, 0);
+			this->UserCashPanel->Location = System::Drawing::Point(185, 122);
 			this->UserCashPanel->Name = L"UserCashPanel";
-			this->UserCashPanel->Size = System::Drawing::Size(736, 441);
+			this->UserCashPanel->Size = System::Drawing::Size(128, 83);
 			this->UserCashPanel->TabIndex = 23;
 			// 
 			// RefillButton
@@ -1207,12 +1204,12 @@ private: System::Windows::Forms::Button^ VerifyAccountButton;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MenuPicture))->EndInit();
 			this->AccountPanel->ResumeLayout(false);
 			this->AccountPanel->PerformLayout();
-			this->MyTicketsPanel->ResumeLayout(false);
-			this->MyTicketsPanel->PerformLayout();
-			this->SettingsPanel->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AccountIcon))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditPasswordPicture))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditEmailPicture))->EndInit();
+			this->MyTicketsPanel->ResumeLayout(false);
+			this->MyTicketsPanel->PerformLayout();
+			this->SettingsPanel->ResumeLayout(false);
 			this->BuyTicketsPanel->ResumeLayout(false);
 			this->panel6->ResumeLayout(false);
 			this->panel6->PerformLayout();

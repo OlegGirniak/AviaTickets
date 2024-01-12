@@ -9,6 +9,7 @@
 
 #include "Customer.h"
 #include "Administrator.h"
+#include "Plane.h"
 #include "OtherFunc.h"
 
 using namespace System;
@@ -23,7 +24,6 @@ public:
 	sql::mysql::MySQL_Driver* driver;
 	sql::Connection* con;
 	sql::ResultSet* res;
-	//sql::ResultSet* insertCar;
 
 	SqlService()
 	{
@@ -175,5 +175,100 @@ public:
 
 		res = pstmt->executeQuery();
 		
+	}
+
+	void AddPlane(Plane^ plane)
+	{
+		sql::PreparedStatement* pstmt = con->prepareStatement("INSERT INTO Planes (placeOfDeparture, placeOfArrival, departureTime, arrivalTime, countOfEconomTickets, countOfBusinessTickets, countOfPremiumTickets)  VALUES(?, ?, ?, ?, ?, ?, ?)");
+
+		pstmt->setString(1, ConvertToString(plane->PlaceOfDeparture));
+		pstmt->setString(2, ConvertToString(plane->PlaceOfArrival));
+		pstmt->setString(3, ConvertToString(plane->DepartureTime));
+		pstmt->setString(4, ConvertToString(plane->ArrivalTime));
+		pstmt->setInt(5, plane->CountOfEconomTickets);
+		pstmt->setInt(6, plane->CountOfBusinessTickets);
+		pstmt->setInt(7, plane->CountOfPremiumTickets);
+
+
+		res = pstmt->executeQuery();
+
+		sql::Statement* stmt = con->createStatement();
+
+		res = stmt->executeQuery("SELECT LAST_INSERT_ID()");
+
+		if (res->next())
+			plane->Id = res->getInt(1);
+
+		for (size_t i = 0; i < plane->CountOfEconomTickets; i++)
+			AddTicket(plane, 1);
+
+		for (size_t i = 0; i < plane->CountOfBusinessTickets; i++)
+			AddTicket(plane, 2);
+
+		for (size_t i = 0; i < plane->CountOfPremiumTickets; i++)
+			AddTicket(plane, 3);
+
+		
+	}
+
+	void DeletePlane(Plane^ plane)
+	{
+		sql::PreparedStatement* pstmt = con->prepareStatement("DELETE FROM Tickets WHERE planeId = ?"); 
+
+		pstmt->setInt(1, plane->Id);
+
+		res = pstmt->executeQuery();
+
+		pstmt = con->prepareStatement("DELETE FROM Planes WHERE id = ?");
+
+		pstmt->setInt(1, plane->Id);
+
+		res = pstmt->executeQuery();
+	}
+
+	void AddTicket(Plane^ plane, int typeOfTicket)
+	{
+		
+		sql::PreparedStatement* pstmt = con->prepareStatement("INSERT INTO Tickets ( placeOfDeparture, placeOfArrival, departureTime, arrivalTime, price, planeId, typeOfTicket, ifSold) VALUES(? , ? , ? , ? , ? , ? , ?, ?)");
+		pstmt->setString(1, ConvertToString(plane->PlaceOfDeparture));
+		pstmt->setString(2, ConvertToString(plane->PlaceOfArrival));
+		pstmt->setString(3, ConvertToString(plane->DepartureTime));
+		pstmt->setString(4, ConvertToString(plane->ArrivalTime));
+
+		if (typeOfTicket == 1)
+			pstmt->setInt(5, 1000);
+		else if (typeOfTicket == 2)
+			pstmt->setInt(5, 2000);
+		else
+			pstmt->setInt(5, 3000);
+
+		pstmt->setInt(6, plane->Id);
+		pstmt->setInt(7, typeOfTicket);
+		pstmt->setBoolean(8, false);
+
+		res = pstmt->executeQuery();
+	}
+
+	void GetPlanes(List<Plane^>^ planes)
+	{
+		sql::PreparedStatement* pstmt = con->prepareStatement("SELECT * FROM Planes");
+
+		res = pstmt->executeQuery();
+
+		while (res->next())
+		{
+			int planeId = res->getInt("id");
+			String^ placeOfDeparture = ConvertToSystemString(res->getString("placeOfDeparture"));
+			String^ placeOfArrival = ConvertToSystemString(res->getString("placeOfArrival"));
+			String^ departureTime = ConvertToSystemString(res->getString("departureTime"));
+			String^ arrivalTime = ConvertToSystemString(res->getString("arrivalTime"));
+			int countOfEconomTickets = res->getInt("countOfEconomTickets");
+			int countOfBusinessTickets = res->getInt("countOfBusinessTickets");
+			int countOfPremiumTickets = res->getInt("countOfPremiumTickets");
+
+			Plane^ newPlane = gcnew Plane(planeId, placeOfDeparture, placeOfArrival, departureTime, arrivalTime, countOfEconomTickets, countOfBusinessTickets, countOfPremiumTickets);
+
+			planes->Add(newPlane);
+		}
 	}
 };

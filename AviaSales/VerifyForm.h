@@ -147,18 +147,7 @@ namespace AviaSales {
 	public: Customer^ customer;
 	public: String^ customerCode;
 
-	private: System::Void ConfirmButton_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		if (customerCode == CodeTextBox->Text)
-		{
-			SqlService^ sqlService = gcnew SqlService();
-			sqlService->VerifyAccount(customer);
-			Application::Exit();
-		}
-		else
-		{
-			MessageBox::Show("Inncorrect code", "Error", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-	}
+	private: System::Void ConfirmButton_Click(System::Object^ sender, System::EventArgs^ e);
+	
 };
 }

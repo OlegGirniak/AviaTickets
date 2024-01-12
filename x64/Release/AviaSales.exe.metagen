@@ -1,4 +1,6 @@
+  AviaSales.AddPlaneForm.resources - Embedded, ContainedInManifestFile, 
   AviaSales.AdminForm.resources - Embedded, ContainedInManifestFile, 
+  AviaSales.DeletePlaneForm.resources - Embedded, ContainedInManifestFile, 
   AviaSales.MainForm.resources - Embedded, ContainedInManifestFile, 
   AviaSales.SignInForm.resources - Embedded, ContainedInManifestFile, 
   AviaSales.SignUpForm.resources - Embedded, ContainedInManifestFile, 
@@ -30,12 +32,29 @@ Class User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     get_Email(): PrivateScope, Public, HideBySig, SpecialName
     get_Password(): PrivateScope, Public, HideBySig, SpecialName
     set_Password(String): PrivateScope, Public, HideBySig, SpecialName
-Class AviaSales.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class AviaSales.AddPlaneForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Administrator): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Administrator admin : Public
+    SqlService sqlService : Public
+Class AviaSales.DeletePlaneForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Administrator): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    SqlService sqlService : Public
+    System.Collections.Generic.List`1[Plane] planes : Public
+    Administrator admin : Public
+Class AviaSales.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Administrator): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    SqlService sqlService : Public
+    Administrator admin : Public
+    System.Collections.Generic.List`1[Plane] planes : Public
 Class AviaSales.VerifyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Customer, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

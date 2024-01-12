@@ -2,6 +2,7 @@
 #include "MainForm.h"
 #include "SignUpForm.h"
 #include "AdminForm.h"
+#include "AddPlaneForm.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -18,3 +19,4 @@ int main(array<String^>^ args)
 
 	return 0;
 }
+

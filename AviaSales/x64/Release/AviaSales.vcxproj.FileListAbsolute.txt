@@ -6,3 +6,5 @@ F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.SignUpForm.resources
 F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.MainForm.resources
 F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.AdminForm.resources
 F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.VerifyForm.resources
+F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.AddPlaneForm.resources
+F:\OOPProjects\AviaSales\AviaSales\x64\Release\AviaSales.DeletePlaneForm.resources

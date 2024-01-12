@@ -5,13 +5,15 @@ using namespace System;
 
 ref class Plane
 {
+    int id;
+
 	String^ placeOfDeparture;
 	String^ placeOfArrival;
 
 	String^ departureTime;
 	String^ arrivalTime;
 
-	int id;
+
 
 	int countOfEconomTickets;
 	int countOfBusinessTickets;
@@ -21,11 +23,31 @@ ref class Plane
 public:
 
     Plane() {}
-    Plane(String^ dep, String^ arr, String^ depTime, String^ arrTime, int planeId, int econTickets, int businessTickets, int premiumTickets)
-        : placeOfDeparture(dep), placeOfArrival(arr), departureTime(depTime), arrivalTime(arrTime),
-        id(planeId), countOfEconomTickets(econTickets), countOfBusinessTickets(businessTickets),
-        countOfPremiumTickets(premiumTickets)
+    Plane(int id) : id(id) { }
+    Plane(int id, String^ placeOfDeparture, String^ placeOfArrival, String^ departureTime, String^ arrivalTime,
+         int countOfEconomTickets, int countOfBusinessTickets, int countOfPremiumTickets)
+
+        : id(id), placeOfDeparture(placeOfDeparture), placeOfArrival(placeOfArrival), departureTime(departureTime), arrivalTime(arrivalTime),
+        countOfEconomTickets(countOfEconomTickets), countOfBusinessTickets(countOfEconomTickets), countOfPremiumTickets(countOfPremiumTickets)
     { }
+
+    Plane(String^ placeOfDeparture, String^ placeOfArrival, String^ departureTime, String^ arrivalTime,
+        int countOfEconomTickets, int countOfBusinessTickets, int countOfPremiumTickets)
+
+        : id(-1), placeOfDeparture(placeOfDeparture), placeOfArrival(placeOfArrival), departureTime(departureTime), arrivalTime(arrivalTime),
+        countOfEconomTickets(countOfEconomTickets), countOfBusinessTickets(countOfEconomTickets), countOfPremiumTickets(countOfPremiumTickets)
+    { }
+
+    static bool operator==(Plane^ left, Plane^ right)
+    {
+        // Порівнюємо за id
+        return (left != nullptr && right != nullptr && left->id == right->id);
+    }
+
+    static bool operator!=(Plane^ left, Plane^ right)
+    {
+        return !(left == right);
+    }
 
     property String^ PlaceOfDeparture 
     {
